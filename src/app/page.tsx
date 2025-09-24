@@ -1,103 +1,152 @@
+"use client";
+
+import SearchBar from "@/components/Atoms/InputText/SearchBar";
+import Available from "@/components/Atoms/Home/Available";
+import AllInOneButton from "@/components/Atoms/Home/AllInOneButton";
+import { ThemeSwitch } from "@/components/Atoms/Toggle/ToggleTheme";
+import MainSection from "@/components/Organisms/BackGround/MainSection";
+import { useThemeAssets } from "@/theme/useThemeAssets";
 import Image from "next/image";
+import SecondContent from "@/components/Organisms/BackGround/SecondContent";
+import ThirdContent from "@/components/Organisms/BackGround/ThirdContent";
+import ActionCard from "@/components/Atoms/Card/ActionCard";
+import FourthContent from "@/components/Organisms/BackGround/FourthContent";
+import AnimatedUseCaseGrid from "@/components/Atoms/Home/AnimatedUseCaseGrid";
+import AiTopics from "@/components/Molecules/Home/AiTopics";
 
 export default function Home() {
+  const { images } = useThemeAssets();
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="h-full w-full h-min-screen">
+      <MainSection>
+        <div className="flex flex-col items-center justify-center h-[100vh] overflow-y-auto">
+          <span className="text-[60px] leading-[96px] font-[600] text-[#FFFFFF] mt-10">
+            Elevate your Productivity with
+          </span>
+          <span className="text-[60px] leading-[96px] font-[600] bg-gradient-to-r from-[#26B77D] to-[#00B0A7] bg-clip-text text-transparent mb-10">
+            AI Chatbot
+          </span>
+          <SearchBar />
+          <div className="w-full max-w-[1200px] flex flex-col mt-20 justify-center items-center">
+            <span className="font-[600] text-[28px] leading-[45px] text-[#E2E2E2]">
+              Available On
+            </span>
+            <div className="flex flex-row gap-10 mt-10">
+              <Available
+                title="App Store"
+                image={images.appstore}
+                link="https://www.apple.com/app-store/"
+              />
+              <Available
+                title="Google Play"
+                image={images.googleplay}
+                link="https://play.google.com/store/apps/details?id=com.google.android.apps.chrome"
+              />
+              <Available
+                title="Chrome"
+                image={images.chrome}
+                link="https://www.google.com/chrome/"
+              />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </MainSection>
+      <SecondContent>
+        <div className="flex flex-col items-center justify-start overflow-y-auto">
+          <div className="mt-10 flex flex-col items-center justify-center">
+            <AllInOneButton title="All In One" />
+            <span className="font-[600] text-[34px] leading-[54px] text-[#FFFFFF] mt-6">
+              Elevate your Productivity with Chat AI
+            </span>
+            <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6">
+              What can Chat AI help you?
+            </span>
+          </div>
+          <div className="mt-10 flex flex-col items-center justify-center">
+            <Image src={images.demo} alt="demo" width={1097} height={623} />
+          </div>
+        </div>
+      </SecondContent>
+      <ThirdContent>
+        <div className="flex flex-col items-center justify-start ">
+          <AllInOneButton title="AI Tool Feature" />
+          <span className="font-[600] text-[34px] leading-[54px] text-[#FFFFFF] mt-6">
+            Creative your world with AI tools
+          </span>
+          <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6">
+            What can Chat AI help you?
+          </span>
+          <div className="mt-10 grid grid-cols-3 items-center justify-center gap-10">
+            <ActionCard
+              title="AI Tool Feature"
+              image={images.card1}
+              active_image={images.card1_active}
+              description="What can Chat AI help you?"
+            />
+            <ActionCard
+              title="AI Tool Feature"
+              image={images.card2}
+              active_image={images.card2_active}
+              description="What can Chat AI help you?"
+            />
+            <ActionCard
+              title="AI Tool Feature"
+              image={images.card3}
+              active_image={images.card3_active}
+              description="What can Chat AI help you?"
+            />
+            <ActionCard
+              title="AI Tool Feature"
+              image={images.card4}
+              active_image={images.card4_active}
+              description="What can Chat AI help you?"
+            />
+
+            <ActionCard
+              title="AI Tool Feature"
+              image={images.card5}
+              active_image={images.card5_active}
+              description="What can Chat AI help you?"
+            />
+
+            <ActionCard
+              title="AI Tool Feature"
+              image={images.card6}
+              active_image={images.card6_active}
+              description="What can Chat AI help you?"
+            />
+          </div>
+        </div>
+      </ThirdContent>
+      <FourthContent>
+        <div className="flex flex-col items-center justify-start mt-10">
+          <AllInOneButton title="Usecases" />
+          <span className="font-[600] text-[34px] leading-[54px] text-[#FFFFFF] mt-6">
+            AI Assistant - best friend with you everywhere -everytime
+          </span>
+          <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6">
+            Discover what our app can help with
+          </span>
+          <div className="mt-20 mb-10">
+            <AnimatedUseCaseGrid
+              useCases={[
+                { title: "Travel", image: images.icTravel },
+                { title: "Education", image: images.icEducation },
+                { title: "Writer", image: images.icWriter },
+                { title: "Math", image: images.icMath },
+                { title: "Language", image: images.icLanguage },
+                { title: "Social Media", image: images.icSocialMedia },
+                { title: "Design", image: images.icDesign },
+                { title: "Voice", image: images.icVoice },
+                { title: "Game", image: images.icGame },
+                { title: "Essays", image: images.icEssays },
+                { title: "Email", image: images.icEmail },
+              ]}
+            />
+          </div>
+          <AiTopics />
+        </div>
+      </FourthContent>
     </div>
   );
 }
