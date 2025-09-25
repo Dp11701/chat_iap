@@ -12,7 +12,7 @@ const AiTopics = () => {
           questions, providing recommendations, and helping you with
           problem-solving tasks.{" "}
         </span>
-        <button className="bg-[#10A469] p-[20px] rounded-[20px] w-full">
+        <button className="bg-[#10A469] p-[20px] rounded-[20px] w-full cursor-pointer">
           <span className="font-[600] text-[28px] leading-[45px] text-[#FFFFFF]">
             Try Now
           </span>
