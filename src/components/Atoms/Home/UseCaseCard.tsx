@@ -17,7 +17,7 @@ const UseCaseCard = (props: {
       }}
     >
       <motion.div
-        className="flex flex-row gap-2 items-center justify-center rounded-[16px] py-[12px] px-[20px]"
+        className="flex flex-row gap-2 items-center justify-center rounded-[16px] py-[12px] xl:px-[20px] sm:px-[12px] px-[8px]"
         animate={{
           background: props.isFlashing
             ? "linear-gradient(208.95deg, #15B475 -12.59%, rgba(42, 55, 58, 0.45) 93.51%)"
@@ -39,7 +39,7 @@ const UseCaseCard = (props: {
         }}
       >
         <Image src={props.image} alt={props.title} width={28} height={28} />
-        <span className="font-[500] text-[20px] leading-[32px] text-[#FFFFFF]">
+        <span className="font-[500] xl:text-[20px] xl:leading-[32px] sm:text-[18px] sm:leading-[28px] text-[#FFFFFF]">
           {props.title}
         </span>
       </motion.div>

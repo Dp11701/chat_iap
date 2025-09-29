@@ -44,7 +44,17 @@
             "icVoice": "/assets/light/icons/IcVoice.svg",
             "icGame": "/assets/light/icons/IcGame.svg",
             "icEssays": "/assets/light/icons/IcEssays.svg",
-            "icEmail": "/assets/light/icons/IcEmail.svg"
+            "icEmail": "/assets/light/icons/IcEmail.svg",
+            "icStar": "/assets/light/IcStar.svg",
+            "IcLaurel": "/assets/light/IcLaurel.png",
+            "icInstagram": "/assets/light/IcInstagram.svg",
+            "icFacebook": "/assets/light/IcFacebook.svg",
+            "icTwitter": "/assets/light/IcTwitter.svg",
+            "icLinkedin": "/assets/light/IcLinkedin.svg",
+            "icDone": "/assets/light/IcDone.svg",
+            "IcCollapse": "/assets/light/IcCollapse.svg",
+            "IcExpand": "/assets/light/IcExpand.svg",
+            "icHeaderMenu": "/assets/light/IcHeaderMenu.svg"
         }
     },
     "dark": {
@@ -92,7 +102,17 @@
             "icVoice": "/assets/dark/icons/IcVoice.svg",
             "icGame": "/assets/dark/icons/IcGame.svg",
             "icEssays": "/assets/dark/icons/IcEssays.svg",
-            "icEmail": "/assets/dark/icons/IcEmail.svg"
+            "icEmail": "/assets/dark/icons/IcEmail.svg",
+            "icStar": "/assets/dark/IcStar.svg",
+            "IcLaurel": "/assets/dark/IcLaurel.png",
+            "icInstagram": "/assets/dark/IcInstagram.svg",
+            "icFacebook": "/assets/dark/IcFacebook.svg",
+            "icX": "/assets/dark/IcX.svg",
+            "icLinkedin": "/assets/dark/IcLinkedln.svg",
+            "icDone": "/assets/dark/IcDone.svg",
+            "IcCollapse": "/assets/dark/IcCollapse.svg",
+            "IcExpand": "/assets/dark/IcExpand.svg",
+            "icHeaderMenu": "/assets/dark/IcHeaderMenu.svg"
         }
     }
 }

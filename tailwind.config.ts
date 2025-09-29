@@ -8,6 +8,9 @@ const config: Config = {
   darkMode: "class", // dùng class để switch dark/light
   theme: {
     extend: {
+      screens: {
+        xs: { max: "374px" },
+      },
       fontFamily: {
         sans: ["SF Pro Display", "sans-serif"],
       },

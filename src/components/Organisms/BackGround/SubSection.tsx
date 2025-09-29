@@ -2,7 +2,7 @@ import React from "react";
 
 const MainSection = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="relative w-full h-auto bg-transparent overflow-hidden pt-[108px]">
+    <div className="relative w-full h-[528px] bg-transparent overflow-hidden rounded-[60px]">
       <div
         className="
           pointer-events-none
@@ -28,8 +28,8 @@ const MainSection = ({ children }: { children: React.ReactNode }) => {
       <div
         className="
           pointer-events-none
-        absolute  bottom-[-20px] left-1/3 
-          w-[400px] h-[400px]
+        absolute  bottom-[-200px] left-1/10 
+          w-[700px] h-[700px]
           rounded-full
         "
         style={{

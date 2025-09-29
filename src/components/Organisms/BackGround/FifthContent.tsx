@@ -1,9 +1,9 @@
 import React from "react";
 
-const FourthContent = ({ children }: { children: React.ReactNode }) => {
+const FifthContent = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="relative w-full bg-transparent overflow-hidden">
-      <div
+    <div className="relative w-full  bg-transparent overflow-hidden">
+      {/* <div
         className="
           pointer-events-none
         absolute right-[-800px] bottom-[-800px] -translate-x-1/2 -translate-y-1/2
@@ -13,7 +13,7 @@ const FourthContent = ({ children }: { children: React.ReactNode }) => {
         style={{
           background: "radial-gradient(circle, #00A375 -100%, transparent 50%)",
         }}
-      />
+      /> */}
 
       {/* Content */}
       <div className="relative z-10">{children}</div>
@@ -21,4 +21,4 @@ const FourthContent = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default FourthContent;
+export default FifthContent;

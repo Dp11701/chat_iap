@@ -5,7 +5,7 @@ import "./SearchBar.css";
 export default function SearchBar() {
   const { images } = useThemeAssets();
   return (
-    <div className=" flex items-center justify-center py-[12px] w-full max-w-[1200px] rounded-full bg-gradient-to-br from-[rgba(8,54,44,0.5)] to-[rgba(7,44,33,0.5)] border border-[#1a3732] overflow-hidden relative">
+    <div className=" flex items-center justify-center py-[12px] w-full xl:max-w-[1200px] sm:max-w-[766px] rounded-full bg-gradient-to-br from-[rgba(8,54,44,0.5)] to-[rgba(7,44,33,0.5)] border border-[#1a3732] overflow-hidden relative">
       <div className="dots_border"></div>
       {/* Input Field */}
       <div className="flex items-center flex-1 px-4 py-3 space-x-3">
@@ -51,7 +51,9 @@ export default function SearchBar() {
             d="M6.5 4L6.303 4.5915C6.24777 4.75718 6.15472 4.90774 6.03123 5.03123C5.90774 5.15472 5.75718 5.24777 5.5915 5.303L5 5.5L5.5915 5.697C5.75718 5.75223 5.90774 5.84528 6.03123 5.96877C6.15472 6.09226 6.24777 6.24282 6.303 6.4085L6.5 7L6.697 6.4085C6.75223 6.24282 6.84528 6.09226 6.96877 5.96877C7.09226 5.84528 7.24282 5.75223 7.4085 5.697L8 5.5L7.4085 5.303C7.24282 5.24777 7.09226 5.15472 6.96877 5.03123C6.84528 4.90774 6.75223 4.75718 6.697 4.5915L6.5 4Z"
           ></path>
         </svg>
-        <span className="text_button">Ask AI</span>
+        <span className="text_button sm:text-[24px] sm:leading-[40px]">
+          Ask AI
+        </span>
       </button>
     </div>
   );
