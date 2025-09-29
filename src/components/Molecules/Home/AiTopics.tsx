@@ -4,16 +4,16 @@ const AiTopics = () => {
   return (
     <div className="flex flex-row items-center justify-center mx-[10vw] my-10 gap-20">
       <div className="flex flex-col items-start justify-center gap-4 w-1/3">
-        <span className="font-[600] text-[28px] leading-[45px] text-[#FFFFFF]">
+        <span className="font-[600] xl:text-[28px] xl:leading-[45px] sm:text-[24px] sm:leading-[40px] text-[#FFFFFF]">
           AI Topics
         </span>
-        <span className="font-[400] text-[20px] leading-[32px] text-[#E2E2E2]">
+        <span className="font-[400] xl:text-[20px] xl:leading-[32px] sm:text-[16px] sm:leading-[24px] text-[#E2E2E2]">
           Chat AI can assist you in a variety of ways, including answering
           questions, providing recommendations, and helping you with
           problem-solving tasks.{" "}
         </span>
-        <button className="bg-[#10A469] p-[20px] rounded-[20px] w-full cursor-pointer">
-          <span className="font-[600] text-[28px] leading-[45px] text-[#FFFFFF]">
+        <button className="bg-[#10A469] xl:p-[20px] sm:p-[16px] p-[12px] rounded-[20px] w-full cursor-pointer">
+          <span className="font-[600] xl:text-[28px] xl:leading-[45px] sm:text-[22px] sm:leading-[35px] text-[#FFFFFF]">
             Try Now
           </span>
         </button>

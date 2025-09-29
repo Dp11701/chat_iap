@@ -25,10 +25,10 @@ const ActionCard = (props: {
         className="absolute top-0 left-0 transition-opacity duration-200 ease-in-out opacity-0 group-hover:opacity-100"
       />
       <div className="flex flex-col items-start  absolute top-10 left-5 w-full h-full">
-        <span className="font-[600] text-[28px] leading-[45px] text-[#E2E2E2]">
+        <span className="font-[600] xl:text-[28px] xl:leading-[45px] sm:text-[24px] sm:leading-[40px] text-[#E2E2E2]">
           {props.title}
         </span>
-        <span className="font-[400] text-[20px] leading-[32px] text-[#E2E2E2]">
+        <span className="font-[400] xl:text-[20px] xl:leading-[32px] sm:text-[16px] sm:leading-[24px] text-[#E2E2E2]">
           {props.description}
         </span>
       </div>

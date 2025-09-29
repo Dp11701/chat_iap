@@ -17,13 +17,37 @@ const Footer = () => {
           </span>
         </div>
         <div className="flex flex-row gap-10 items-center">
-          <span className="text-[18px] font-[500] leading-[28px] text-[#10A469] cursor-pointer">
+          <span
+            onClick={() =>
+              window.open(
+                "https://chat-ai-terms.begamob.com/terms-of-service",
+                "_blank"
+              )
+            }
+            className="text-[18px] font-[500] leading-[28px] text-[#10A469] cursor-pointer"
+          >
             Terms of use
           </span>
-          <span className="text-[18px] font-[500] leading-[28px] text-[#10A469] cursor-pointer">
+          <span
+            onClick={() =>
+              window.open(
+                "https://chat-ai-terms.begamob.com/privacy-policy",
+                "_blank"
+              )
+            }
+            className="text-[18px] font-[500] leading-[28px] text-[#10A469] cursor-pointer"
+          >
             Privacy policy
           </span>
-          <span className="text-[18px] font-[500] leading-[28px] text-[#10A469] cursor-pointer">
+          <span
+            onClick={() =>
+              window.open(
+                "https://chat-ai-terms.begamob.com/subscription-term",
+                "_blank"
+              )
+            }
+            className="text-[18px] font-[500] leading-[28px] text-[#10A469] cursor-pointer"
+          >
             Subscription Terms
           </span>
         </div>

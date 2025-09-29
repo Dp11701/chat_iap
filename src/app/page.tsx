@@ -20,19 +20,20 @@ import SubSection from "@/components/Organisms/BackGround/SubSection";
 
 export default function Home() {
   const { images } = useThemeAssets();
+
   return (
     <div className="h-full w-full h-min-screen">
       <MainSection>
         <div className="flex flex-col items-center justify-center h-[100vh] overflow-y-auto">
-          <span className="text-[60px] leading-[96px] font-[600] text-[#FFFFFF] mt-10">
+          <span className="xl:text-[60px] xl:leading-[96px] sm:text-[48px] sm:leading-[76px] font-[600] text-[#FFFFFF] xl:mt-10 sm:mt-2">
             Elevate your Productivity with
           </span>
-          <span className="text-[60px] leading-[96px] font-[600] bg-gradient-to-r from-[#26B77D] to-[#00B0A7] bg-clip-text text-transparent mb-10">
+          <span className="xl:text-[60px] xl:leading-[96px] sm:text-[48px] sm:leading-[76px] font-[600] bg-gradient-to-r from-[#26B77D] to-[#00B0A7] bg-clip-text text-transparent mb-10">
             AI Chatbot
           </span>
           <SearchBar />
           <div className="w-full max-w-[1200px] flex flex-col mt-20 justify-center items-center">
-            <span className="font-[600] text-[28px] leading-[45px] text-[#E2E2E2]">
+            <span className="font-[600] xl:text-[28px] xl:leading-[45px] sm:text-[24px] sm:leading-[40px] text-[#E2E2E2]">
               Available On
             </span>
             <div className="flex flex-row gap-10 mt-10">
@@ -59,7 +60,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-start overflow-y-auto">
           <div className="mt-10 flex flex-col items-center justify-center">
             <AllInOneButton title="All In One" />
-            <span className="font-[600] text-[34px] leading-[54px] text-[#FFFFFF] mt-6">
+            <span className="font-[600] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[#FFFFFF] mt-6">
               Elevate your Productivity with Chat AI
             </span>
             <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6">
@@ -74,7 +75,7 @@ export default function Home() {
       <ThirdContent>
         <div className="flex flex-col items-center justify-start ">
           <AllInOneButton title="AI Tool Feature" />
-          <span className="font-[600] text-[34px] leading-[54px] text-[#FFFFFF] mt-6">
+          <span className="font-[600] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[#FFFFFF] mt-6">
             Creative your world with AI tools
           </span>
           <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6">
@@ -125,7 +126,7 @@ export default function Home() {
       <FourthContent>
         <div className="flex flex-col items-center justify-start mt-20">
           <AllInOneButton title="Usecases" />
-          <span className="font-[600] text-[34px] leading-[54px] text-[#FFFFFF] mt-6">
+          <span className="font-[600] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[#FFFFFF] mt-6">
             AI Assistant - best friend with you everywhere -everytime
           </span>
           <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6">
@@ -154,7 +155,7 @@ export default function Home() {
       <FifthContent>
         <div className="flex flex-col items-center justify-start mt-10">
           <AllInOneButton title="Testimonials" />
-          <span className="font-[600] text-[34px] leading-[54px] text-[#FFFFFF] mt-10">
+          <span className="font-[600] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[#FFFFFF] mt-10">
             User feedback
           </span>
           <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6 flex flex-row items-center justify-center gap-2">
@@ -172,11 +173,17 @@ export default function Home() {
           <CommentGrid comments={feedback} />
           <div className="flex flex-row items-center justify-center my-10 gap-10">
             <button
+              onClick={() =>
+                window.open(
+                  "https://apps.apple.com/ca/app/ai-chat-ai-assistant/id1669513811",
+                  "_blank"
+                )
+              }
               style={{
                 background:
                   "linear-gradient(207.56deg, #2A9476 -29.94%, rgba(42, 55, 58, 0.15) 72.76%);",
               }}
-              className=" rounded-[20px] p-[12px] flex flex-row gap-2 w-[344px] items-center justify-start"
+              className=" rounded-[20px] p-[12px] flex flex-row gap-2 w-[344px] items-center justify-start transition-transform duration-300 ease-in-out hover:scale-105"
             >
               <div>
                 <Image
@@ -196,11 +203,17 @@ export default function Home() {
               </div>
             </button>
             <button
+              onClick={() =>
+                window.open(
+                  " https://play.google.com/store/apps/details?id=com.chat.chatai.chatbot.aichatbot&hl=en",
+                  "_blank"
+                )
+              }
               style={{
                 background:
                   "linear-gradient(207.56deg, #2A9476 -29.94%, rgba(42, 55, 58, 0.15) 72.76%);",
               }}
-              className=" rounded-[20px] p-[12px] flex flex-row gap-2 w-[344px] items-center justify-start"
+              className=" rounded-[20px] p-[12px] flex flex-row gap-2 w-[344px] items-center justify-start transition-transform duration-300 ease-in-out hover:scale-105"
             >
               <div>
                 <Image
@@ -223,11 +236,11 @@ export default function Home() {
         </div>
       </FifthContent>
       <div className="flex flex-col items-center justify-center w-full rounded-[60px] pb-20 bg-transparent">
-        <div className="w-[1120px] rounded-[60px]">
+        <div className="xl:w-[1120px] lg:w-[766px] sm:w-[600px] w-[374px] rounded-[60px]">
           <SubSection>
             <div className="flex flex-col items-center justify-center mt-20">
               <AllInOneButton title="Start your journey" />
-              <span className="font-[600] text-[34px] leading-[54px] text-[#FFFFFF] mt-6">
+              <span className="font-[600] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[#FFFFFF] mt-6">
                 Unlock Your AI Power, Save More!
               </span>
               <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6 mb-10">
@@ -236,24 +249,24 @@ export default function Home() {
               <div className="flex flex-row gap-4">
                 <input
                   placeholder="Enter your email"
-                  className="bg-[#101613] p-4 rounded-[20px] w-[711px] h-[79px] text-[#FFFFFF] text-[20px] leading-[30px] font-[400] "
+                  className="bg-[#101613] p-4 rounded-[20px] xl:w-[711px] md:w-[400px] sm:w-[300px] xl:h-[79px] sm:h-[70px] h-[40px] text-[#FFFFFF] text-[20px] leading-[30px] font-[400] "
                   style={{ border: "2.5px solid #FFFFFF1A" }}
                 />
                 <button
                   style={{ boxShadow: "0px 5.76px 23.04px 0px #00B29D40" }}
-                  className="p-4 rounded-[20px] w-[234px] h-[79px] text-[#FFFFFF] flex items-center justify-center bg-[#10A469]"
+                  className="p-4 rounded-[20px] xl:w-[234px] sm:w-[200px] w-[100px] xl:h-[79px] sm:h-[70px] h-[40px] text-[#FFFFFF] flex items-center justify-center bg-[#10A469]"
                 >
-                  <span className="cursor-pointer font-[600] text-[28px] leading-[45px] text-[#FFFFFF]">
+                  <span className="cursor-pointer font-[600] xl:text-[28px] xl:leading-[45px] sm:text-[22px] sm:leading-[35px] text-[#FFFFFF]">
                     Get Voucher
                   </span>
                 </button>
               </div>
-              <div className="flex flex-row mt-6 items-center justify-start px-20 gap-2 w-full">
-                <span className="font-[400] text-[20px] leading-[32px] text-[#E2E2E2]">
+              <div className="flex flex-row mt-6 items-center justify-start xl:px-20 sm:px-10 px-2 gap-2 w-full">
+                <span className="font-[400] xl:text-[20px] xl:leading-[32px] sm:text-[18px] sm:leading-[28px] text-[#E2E2E2]">
                   By submitting, you accept our
                 </span>
                 <span
-                  className="font-[400] text-[20px] leading-[32px] text-[#10A469] cursor-pointer"
+                  className="font-[400] xl:text-[20px] xl:leading-[32px] sm:text-[18px] sm:leading-[28px] text-[#10A469] cursor-pointer"
                   onClick={() => {
                     window.open(
                       "https://chat-ai-terms.begamob.com/terms-of-service",

@@ -81,7 +81,7 @@ const AnimatedUseCaseGrid: React.FC<AnimatedUseCaseGridProps> = ({
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       {/* Hàng đầu - 5 cái */}
-      <div className="grid grid-cols-5 items-center justify-center gap-10 mx-20">
+      <div className="grid grid-cols-5 items-center justify-center xl:gap-10 sm:gap-6 gap-2 mx-20">
         {firstRow.map((useCase, index) => (
           <motion.div
             key={index}
@@ -111,7 +111,7 @@ const AnimatedUseCaseGrid: React.FC<AnimatedUseCaseGridProps> = ({
       </div>
 
       {/* Hàng sau - còn lại */}
-      <div className="grid grid-cols-6 items-center justify-center gap-10">
+      <div className="grid grid-cols-6 items-center justify-center xl:gap-10 sm:gap-2 gap-1">
         {secondRow.map((useCase, index) => {
           const actualIndex = index + 5; // Offset để match với visibleCards
           return (

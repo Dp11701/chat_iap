@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/theme/ThemeContext";
 import Header from "@/components/Molecules/Layout/Header/Header";
 import Footer from "@/components/Molecules/Layout/Footer/Footer";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,9 +32,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <ThemeProvider>
-          <Header />
-          {children}
-          <Footer />
+          <AppRouterCacheProvider>
+            <Header />
+            {children}
+            <Footer />
+          </AppRouterCacheProvider>
         </ThemeProvider>
       </body>
     </html>

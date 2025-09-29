@@ -10,7 +10,7 @@ export default function AllInOneButton(props: { title: string }) {
 
       {/* Center button */}
       <button
-        className="mx-6 px-10 py-3 rounded-[12px] text-white font-medium shadow-lg  transition"
+        className="font-[600] xl:text-[20px] xl:leading-[32px] sm:text-[18px] sm:leading-[28px] mx-6 px-10 py-3 rounded-[12px] text-white shadow-lg transition"
         style={{
           background:
             "linear-gradient(207.56deg, #2A9476 -29.94%, rgba(42, 55, 58, 0.15) 72.76%)",

@@ -2,7 +2,7 @@ import React from "react";
 
 const MainSection = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="relative w-full h-[100vh] bg-transparent overflow-hidden pt-[108px]">
+    <div className="relative w-full h-auto bg-transparent overflow-hidden pt-[108px]">
       <div
         className="
           pointer-events-none
