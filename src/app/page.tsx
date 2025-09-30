@@ -3,7 +3,6 @@
 import SearchBar from "@/components/Atoms/InputText/SearchBar";
 import Available from "@/components/Atoms/Home/Available";
 import AllInOneButton from "@/components/Atoms/Home/AllInOneButton";
-import { ThemeSwitch } from "@/components/Atoms/Toggle/ToggleTheme";
 import MainSection from "@/components/Organisms/BackGround/MainSection";
 import { useThemeAssets } from "@/theme/useThemeAssets";
 import Image from "next/image";
@@ -17,9 +16,44 @@ import FifthContent from "@/components/Organisms/BackGround/FifthContent";
 import CommentGrid from "@/components/Atoms/Home/CommentGrid";
 import { feedback } from "@/data/feedback";
 import SubSection from "@/components/Organisms/BackGround/SubSection";
+import { useState } from "react";
+import Toast from "@/components/Atoms/Toast/Toast";
 
 export default function Home() {
   const { images } = useThemeAssets();
+  const [email, setEmail] = useState("");
+  const [toast, setToast] = useState({
+    isVisible: false,
+    message: "",
+    type: "success" as "success" | "error" | "info",
+  });
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const handleGetVoucher = () => {
+    if (!email.trim()) {
+      setToast({
+        isVisible: true,
+        message: "Please enter your email address",
+        type: "error",
+      });
+      return;
+    }
+
+    // Simulate email sending
+    setEmail("");
+    setToast({
+      isVisible: true,
+      message: "Voucher sent successfully! Check your email.",
+      type: "success",
+    });
+  };
+
+  const closeToast = () => {
+    setToast((prev) => ({ ...prev, isVisible: false }));
+  };
 
   return (
     <div className="h-full w-full h-min-screen">
@@ -257,10 +291,13 @@ export default function Home() {
                   placeholder="Enter your email"
                   className="bg-[#101613] p-4 rounded-[20px] xl:w-[711px] md:w-[400px] sm:w-[300px] xl:h-[79px] sm:h-[70px] h-[40px] text-[#FFFFFF] text-[20px] leading-[30px] font-[400] "
                   style={{ border: "2.5px solid #FFFFFF1A" }}
+                  value={email}
+                  onChange={handleEmailChange}
                 />
                 <button
                   style={{ boxShadow: "0px 5.76px 23.04px 0px #00B29D40" }}
                   className="p-4 rounded-[20px] xl:w-[234px] sm:w-[200px] w-[100px] xl:h-[79px] sm:h-[70px] h-[40px] text-[#FFFFFF] flex items-center justify-center bg-[#10A469]"
+                  onClick={handleGetVoucher}
                 >
                   <span className="cursor-pointer font-[600] xl:text-[28px] xl:leading-[45px] sm:text-[22px] sm:leading-[35px] text-[#FFFFFF]">
                     Get Voucher
@@ -287,6 +324,15 @@ export default function Home() {
           </SubSection>
         </div>
       </div>
+
+      {/* Toast Notification */}
+      <Toast
+        message={toast.message}
+        type={toast.type}
+        isVisible={toast.isVisible}
+        onClose={closeToast}
+        duration={4000}
+      />
     </div>
   );
 }
