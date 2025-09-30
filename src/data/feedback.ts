@@ -21,42 +21,42 @@ export const feedback = [
   },
   {
     comment:
-      "I use AI ChatBot for brainstorming, answering tricky questions and writing content everyday.",
-    name: "Fantastic Experience!",
+      "Gave me a brand identity in minutes. Typed in my business name and vibe, and it generated 5 great options.",
+    name: "So Awesome!",
     user: {
-      name: "Jame Writer",
+      name: "Aaron",
       image: "/assets/common/feedback3.png",
-      role: "Copywriter",
+      role: "Marketer",
     },
   },
   {
     comment:
-      "I use AI ChatBot for brainstorming, answering tricky questions and writing content everyday.",
-    name: "Fantastic Experience!",
+      "I can finally chat confidently across languages. The translations sound natural and I can choose formal or casual style too.",
+    name: "Understand the World!",
     user: {
-      name: "Jame Writer",
+      name: "Alex",
       image: "/assets/common/feedback4.png",
-      role: "Copywriter",
+      role: "Translator",
     },
   },
   {
     comment:
-      "I use AI ChatBot for brainstorming, answering tricky questions and writing content everyday.",
-    name: "Fantastic Experience!",
+      "Faster than looking things up myself. I ask and it summarizes the latest info clearly, with sources if I want to check.  I'm pleasure.",
+    name: "Reliable Fast Search",
     user: {
-      name: "Jame Writer",
+      name: "Sophie",
       image: "/assets/common/feedback5.png",
-      role: "Copywriter",
+      role: "Teacher",
     },
   },
   {
     comment:
-      "I use AI ChatBot for brainstorming, answering tricky questions and writing content everyday.",
-    name: "Fantastic Experience!",
+      "Surprisingly close to my real look. Created a cute, stylized version of me that I now use almost everywhere online on socials.",
+    name: "Perfect for AI Avatar",
     user: {
-      name: "Jame Writer",
+      name: "Tina",
       image: "/assets/common/feedback6.png",
-      role: "Copywriter",
+      role: "Content Creator",
     },
   },
 ];
