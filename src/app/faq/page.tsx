@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import MainSection from "@/components/Organisms/BackGround/MainSection";
 import AllInOneButton from "@/components/Atoms/Home/AllInOneButton";
 import SubSection from "@/components/Organisms/BackGround/SubSection";
@@ -10,6 +10,7 @@ import { faqData } from "@/data/faq";
 import FAQList from "@/components/Atoms/FAQ/FAQList";
 import Image from "next/image";
 import { useThemeAssets } from "@/theme/useThemeAssets";
+import Toast from "@/components/Atoms/Toast/Toast";
 
 const Benefits = (props: { title: string }) => {
   const { images } = useThemeAssets();
@@ -25,6 +26,40 @@ const Benefits = (props: { title: string }) => {
 
 const Faq = () => {
   const { images } = useThemeAssets();
+  const [email, setEmail] = useState("");
+  const [toast, setToast] = useState({
+    isVisible: false,
+    message: "",
+    type: "success" as "success" | "error" | "info",
+  });
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const handleGetVoucher = () => {
+    if (!email.trim()) {
+      setToast({
+        isVisible: true,
+        message: "Please enter your email address",
+        type: "error",
+      });
+      return;
+    }
+
+    // Simulate email sending
+    setEmail("");
+    setToast({
+      isVisible: true,
+      message: "Voucher sent successfully! Check your email.",
+      type: "success",
+    });
+  };
+
+  const closeToast = () => {
+    setToast((prev) => ({ ...prev, isVisible: false }));
+  };
+
   return (
     <div>
       <MainSection>
@@ -138,10 +173,23 @@ const Faq = () => {
                   placeholder="Enter your email"
                   className="bg-[#101613] p-4 rounded-[20px] w-[711px] h-[79px] text-[#FFFFFF] text-[20px] leading-[30px] font-[400] "
                   style={{ border: "2.5px solid #FFFFFF1A" }}
+                  value={email}
+                  onChange={handleEmailChange}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      handleGetVoucher();
+                    }
+                  }}
                 />
                 <button
                   style={{ boxShadow: "0px 5.76px 23.04px 0px #00B29D40" }}
                   className="p-4 rounded-[20px] w-[234px] h-[79px] text-[#FFFFFF] flex items-center justify-center bg-[#10A469]"
+                  onClick={handleGetVoucher}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      handleGetVoucher();
+                    }
+                  }}
                 >
                   <span className="cursor-pointer font-[600] text-[28px] leading-[45px] text-[#FFFFFF]">
                     Get Voucher
@@ -168,6 +216,13 @@ const Faq = () => {
           </SubSection>
         </div>
       </div>
+      <Toast
+        message={toast.message}
+        type={toast.type}
+        isVisible={toast.isVisible}
+        onClose={closeToast}
+        duration={4000}
+      />
     </div>
   );
 };
