@@ -171,6 +171,12 @@ export default function Home() {
             />
           </div>
           <CommentGrid comments={feedback} />
+          <div className="flex flex-row items-center justify-center w-[400px] p-6 bg-[#101613] rounded-[20px] mt-10">
+            {" "}
+            <span className="font-[600] xl:text-[20px] xl:leading-[32px] sm:text-[18px] sm:leading-[28px] text-[#FFFFFF] cursor-pointer">
+              View more review on
+            </span>
+          </div>
           <div className="flex flex-row items-center justify-center my-10 gap-10">
             <button
               onClick={() =>
