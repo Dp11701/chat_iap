@@ -59,7 +59,7 @@ const Compared = () => {
   return (
     <div>
       <MainSection>
-        <div className="flex flex-col items-center justify-center my-20">
+        <div className="flex flex-col items-center justify-center my-20 sm:mx-0 mx-2">
           <AllInOneButton title="Pricing & Plan" />
           <span className="font-[600] text-[34px] leading-[54px] text-[#FFFFFF] mt-16">
             A plan for every need
@@ -67,10 +67,10 @@ const Compared = () => {
           <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6">
             Choose from tailored packages that fits your goals and timeline.
           </span>
-          <div className="flex flex-row gap-10 mt-10 bg-transparent">
+          <div className="flex sm:flex-row flex-col items-center gap-10 mt-10 bg-transparent sm:mx-0 mx-2">
             {/* first column */}
             <div
-              className="flex flex-col gap-4 bg-[#0A0F0D] w-[450px] rounded-[28px] px-4 py-6 transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer"
+              className=" flex flex-col gap-4 bg-[#0A0F0D] sm:w-[450px] w-[90vw] rounded-[28px] px-4 py-6 transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer"
               style={{ border: "2px solid #FFFFFF1A" }}
             >
               <div className="flex w-full flex-row items-center justify-between">
@@ -120,7 +120,7 @@ const Compared = () => {
               </div>
             </div>
             {/* second column */}
-            <div className="relative flex flex-col gap-4 bg-[#0A0F0D] w-[450px] rounded-[28px] pb-6 transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer">
+            <div className="relative flex flex-col gap-4 bg-[#0A0F0D] sm:w-[450px] w-[90vw] rounded-[28px] pb-6 transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer">
               <div className="bg-[linear-gradient(204.1deg,_#1CCD86_-10.47%,_rgba(42,_55,_58,_0.15)_56.56%)] w-full rounded-t-[28px] px-4 pt-6 gap-4 flex flex-col">
                 {" "}
                 <div className="flex w-full flex-row items-center justify-between">
