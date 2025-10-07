@@ -17,7 +17,7 @@ const Available = (props: { title: string; image: string; link: string }) => {
         height={48}
         className="sm:w-[44px] sm:h-[44px] xl:w-[48px] xl:h-[48px]"
       />
-      <span className="font-[400] xl:text-[28px] xl:leading-[45px] sm:text-[24px] sm:leading-[40px] text-[#9E9E9F]">
+      <span className="font-[400] xl:text-[28px] xl:leading-[45px] sm:text-[24px] sm:leading-[40px] text-[#9E9E9F] sm:block hidden">
         {props.title}
       </span>
     </div>

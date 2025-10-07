@@ -176,7 +176,7 @@ const Compared = () => {
       <FifthContent>
         <div className="flex flex-col items-center justify-start mt-10">
           <AllInOneButton title="Testimonials" />
-          <span className="font-[600] text-[34px] leading-[54px] text-[#FFFFFF] mt-10">
+          <span className="font-[600] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[#FFFFFF] mt-10">
             User feedback
           </span>
           <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6 flex flex-row items-center justify-center gap-2">
@@ -192,13 +192,25 @@ const Compared = () => {
             />
           </div>
           <CommentGrid comments={feedback} />
-          <div className="flex flex-row items-center justify-center my-10 gap-10">
+          <div className="flex flex-row items-center justify-center w-[400px] p-6 bg-[#101613] rounded-[20px] mt-10">
+            {" "}
+            <span className="font-[600] xl:text-[20px] xl:leading-[32px] sm:text-[18px] sm:leading-[28px] text-[#FFFFFF] cursor-pointer">
+              View more review on
+            </span>
+          </div>
+          <div className="flex sm:flex-row flex-col items-center justify-center my-10 gap-10">
             <button
+              onClick={() =>
+                window.open(
+                  "https://apps.apple.com/ca/app/ai-chat-ai-assistant/id1669513811",
+                  "_blank"
+                )
+              }
               style={{
                 background:
                   "linear-gradient(207.56deg, #2A9476 -29.94%, rgba(42, 55, 58, 0.15) 72.76%);",
               }}
-              className=" rounded-[20px] p-[12px] flex flex-row gap-2 w-[344px] items-center justify-start"
+              className=" rounded-[20px] p-[12px] flex flex-row gap-2 w-[344px] items-center justify-start transition-transform duration-300 ease-in-out hover:scale-105"
             >
               <div>
                 <Image
@@ -218,11 +230,17 @@ const Compared = () => {
               </div>
             </button>
             <button
+              onClick={() =>
+                window.open(
+                  " https://play.google.com/store/apps/details?id=com.chat.chatai.chatbot.aichatbot&hl=en",
+                  "_blank"
+                )
+              }
               style={{
                 background:
                   "linear-gradient(207.56deg, #2A9476 -29.94%, rgba(42, 55, 58, 0.15) 72.76%);",
               }}
-              className=" rounded-[20px] p-[12px] flex flex-row gap-2 w-[344px] items-center justify-start"
+              className=" rounded-[20px] p-[12px] flex flex-row gap-2 w-[344px] items-center justify-start transition-transform duration-300 ease-in-out hover:scale-105"
             >
               <div>
                 <Image
@@ -245,45 +263,40 @@ const Compared = () => {
         </div>
       </FifthContent>
       <div className="flex flex-col items-center justify-center w-full rounded-[60px] pb-20 bg-transparent">
-        <div className="w-[1120px] rounded-[60px]">
+        <div className="xl:w-[1120px] lg:w-[766px] sm:w-[600px] w-[374px] rounded-[60px]">
           <SubSection>
-            <div className="flex flex-col items-center justify-center mt-20">
+            <div className="flex flex-col items-center justify-center sm:mt-20 mt-5">
               <AllInOneButton title="Start your journey" />
-              <span className="font-[600] text-[34px] leading-[54px] text-[#FFFFFF] mt-6">
+              <span className="font-[600] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[20px] leading-[32px] text-[#FFFFFF] mt-6">
                 Unlock Your AI Power, Save More!
               </span>
-              <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6 mb-10">
+              <span className="font-[400] sm:text-[24px] sm:leading-[39px] text-[16px] leading-[24px] text-[#9E9E9F] mt-6 mb-10">
                 Enter your email to get an exclusive voucher
               </span>
-              <div className="flex flex-row gap-4">
+              <div className="flex sm:flex-row flex-col sm:gap-4 gap-2">
                 <input
                   placeholder="Enter your email"
-                  className="bg-[#101613] p-4 rounded-[20px] w-[711px] h-[79px] text-[#FFFFFF] text-[20px] leading-[30px] font-[400] "
+                  className="bg-[#101613] p-4 rounded-[20px] xl:w-[711px] md:w-[400px] sm:w-[300px] xl:h-[79px] sm:h-[70px] h-[59px] w-[300px] text-[#FFFFFF] text-[20px] leading-[30px] font-[400] "
                   style={{ border: "2.5px solid #FFFFFF1A" }}
                   value={email}
                   onChange={handleEmailChange}
                 />
                 <button
                   style={{ boxShadow: "0px 5.76px 23.04px 0px #00B29D40" }}
-                  className="p-4 rounded-[20px] w-[234px] h-[79px] text-[#FFFFFF] flex items-center justify-center bg-[#10A469]"
+                  className="p-4 rounded-[20px] xl:w-[234px] sm:w-[200px] w-[100px] xl:h-[79px] sm:h-[70px] h-[40px] text-[#FFFFFF] sm:flex hidden items-center justify-center bg-[#10A469]"
                   onClick={handleGetVoucher}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") {
-                      handleGetVoucher();
-                    }
-                  }}
                 >
-                  <span className="cursor-pointer font-[600] text-[28px] leading-[45px] text-[#FFFFFF]">
+                  <span className="cursor-pointer font-[600] xl:text-[28px] xl:leading-[45px] sm:text-[22px] sm:leading-[35px] text-[#FFFFFF]">
                     Get Voucher
                   </span>
                 </button>
               </div>
-              <div className="flex flex-row mt-6 items-center justify-start px-20 gap-2 w-full">
-                <span className="font-[400] text-[20px] leading-[32px] text-[#E2E2E2]">
+              <div className="flex flex-row mt-6 items-center justify-start xl:px-20 sm:px-10 px-0 gap-1 sm:gap-2 w-full">
+                <span className="font-[400] xl:text-[20px] xl:leading-[32px] sm:text-[18px] sm:leading-[28px] text-[14px] leading-[20px] text-[#E2E2E2]">
                   By submitting, you accept our
                 </span>
                 <span
-                  className="font-[400] text-[20px] leading-[32px] text-[#10A469] cursor-pointer"
+                  className="font-[400] xl:text-[20px] xl:leading-[32px] sm:text-[18px] sm:leading-[28px] text-[14px] leading-[20px] text-[#10A469] cursor-pointer"
                   onClick={() => {
                     window.open(
                       "https://chat-ai-terms.begamob.com/terms-of-service",
@@ -294,10 +307,21 @@ const Compared = () => {
                   Terms of Use and Privacy Policy.
                 </span>
               </div>
+              <button
+                style={{ boxShadow: "0px 5.76px 23.04px 0px #00B29D40" }}
+                className="p-4 rounded-[20px]  w-[200px] h-[59px] text-[#FFFFFF] flex sm:hidden items-center justify-center bg-[#10A469] mt-4"
+                onClick={handleGetVoucher}
+              >
+                <span className="cursor-pointer font-[600] xl:text-[28px] xl:leading-[45px] sm:text-[22px] sm:leading-[35px] text-[#FFFFFF]">
+                  Get Voucher
+                </span>
+              </button>
             </div>
           </SubSection>
         </div>
       </div>
+
+      {/* Toast Notification */}
       <Toast
         message={toast.message}
         type={toast.type}

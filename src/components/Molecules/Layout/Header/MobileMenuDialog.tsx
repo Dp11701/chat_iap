@@ -3,6 +3,10 @@ import React from "react";
 import Dialog from "@mui/material/Dialog";
 import Slide from "@mui/material/Slide";
 import type { TransitionProps } from "@mui/material/transitions";
+import { usePathname, useRouter } from "next/navigation";
+import { useTheme } from "@/theme/ThemeContext";
+import { useThemeAssets } from "@/theme/useThemeAssets";
+import Image from "next/image";
 
 type MobileMenuDialogProps = {
   open: boolean;
@@ -26,65 +30,86 @@ export default function MobileMenuDialog({
   onToggleTheme,
   themeLabel,
 }: MobileMenuDialogProps) {
+  const router = useRouter();
+  const { mode, toggleTheme } = useTheme();
+  const { images } = useThemeAssets();
+  const pathname = usePathname();
+
+  const handleNavigate = (path: string) => {
+    router.push(path);
+    onClose();
+  };
+
+  // Function to determine if a navigation item is active
+  const isActive = (path: string) => {
+    return pathname === path;
+  };
+
+  // Function to get the color for navigation items
+  const getNavColor = (path: string) => {
+    return isActive(path) ? "#10A469" : "#9E9E9F";
+  };
+
   return (
     <Dialog
       open={open}
       onClose={onClose}
       TransitionComponent={Transition}
       keepMounted
-      PaperProps={{
-        className:
-          "bg-[#0F1214] dark:bg-[#0F1214] text-white rounded-2xl w-[90vw] max-w-[420px] mx-auto",
-        style: { backgroundImage: "none" },
+      slotProps={{
+        paper: {
+          className:
+            "flex w-full !justify-center !rounded-[24px] !bg-[#0A0F0D] !m-[50px]",
+        },
       }}
     >
-      <div className="p-6">
-        <div className="mb-4">
-          <h3 className="text-2xl font-semibold text-[#10A469]">Overview</h3>
-        </div>
-
-        <nav className="flex flex-col gap-4 text-lg">
-          <button
-            className="text-left text-white/90 hover:text-white transition-colors"
-            onClick={() => {
-              onNavigate("/");
-              onClose();
-            }}
+      <div className="flex flex-col items-end justify-end gap-[4vw] bg-[#0A0F0D] w-[300px] py-10  rounded-[24px]">
+        <div
+          className="flex flex-col
+         items-end gap-4 w-full"
+        >
+          <span
+            onClick={() => handleNavigate("/")}
+            className="font-[500] xl:text-[20px] xl:leading-[32px] text-[18px] leading-[28px] cursor-pointer transition-colors duration-200"
+            style={{ color: getNavColor("/") }}
           >
             Overview
-          </button>
-          <button
-            className="text-left text-white/90 hover:text-white transition-colors"
-            onClick={() => {
-              onNavigate("/compared");
-              onClose();
-            }}
+          </span>
+          <span
+            onClick={() => handleNavigate("/compared")}
+            className="font-[500] xl:text-[20px] xl:leading-[32px] text-[18px] leading-[28px] cursor-pointer transition-colors duration-200"
+            style={{ color: getNavColor("/compared") }}
           >
             Compared Plans
-          </button>
-          <button
-            className="text-left text-white/90 hover:text-white transition-colors"
-            onClick={() => {
-              onNavigate("/faq");
-              onClose();
-            }}
+          </span>
+          <span
+            onClick={() => handleNavigate("/faq")}
+            className="font-[500] xl:text-[20px] xl:leading-[32px] text-[18px] leading-[28px] cursor-pointer transition-colors duration-200"
+            style={{ color: getNavColor("/faq") }}
           >
             FAQ
-          </button>
-        </nav>
-
-        <div className="mt-6 flex flex-col gap-4">
-          <button className="w-full bg-[#2A2F33] text-white font-semibold py-3 rounded-2xl">
-            Log In
-          </button>
+          </span>
+        </div>
+        <div className="flex flex-col items-end w-full gap-4">
           <button
-            onClick={() => {
-              onToggleTheme();
-            }}
-            className="w-full bg-[#2A2F33] text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-2"
+            onClick={toggleTheme}
+            className="flex w-1/2 items-center justify-center bg-[#FFFFFF1A] dark:bg-[#323232] px-[20px] py-[12px] rounded-[14px] gap-2 hover:bg-[#FFFFFF2A] dark:hover:bg-[#9E9E9E] transition-colors duration-200"
           >
-            <span>🌙</span>
-            <span>{themeLabel}</span>
+            <Image
+              src={images.theme}
+              alt="theme"
+              width={24}
+              height={24}
+              className="w-5 h-5 xl:w-6 xl:h-6"
+            />
+            <span className="font-[600] xl:text-[20px] text-[14px] leading-[20px] xl:leading-[32px] text-[#000000] dark:text-[#FFFFFF]">
+              {mode === "light" ? "Light" : "Dark"}
+            </span>
+          </button>{" "}
+          <button className="flex w-1/2 items-center justify-center bg-[#FFFFFF1A] dark:bg-[#323232] px-[20px] py-[12px] rounded-[14px] hover:bg-[#FFFFFF2A] dark:hover:bg-[#9E9E9E] transition-colors duration-200">
+            <span className="font-[600] xl:text-[20px] text-[14px] leading-[20px] xl:leading-[32px] text-[#000000] dark:text-[#FFFFFF]">
+              Log in
+            </span>
           </button>
         </div>
       </div>

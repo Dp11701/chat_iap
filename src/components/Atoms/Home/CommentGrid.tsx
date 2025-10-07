@@ -6,7 +6,7 @@ const CommentGrid = (props: {
   comments: Array<{ comment: string; name: string; user: User }>;
 }) => {
   return (
-    <div className="grid grid-cols-3 gap-[24px] w-[1200px]">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-[24px] sm:w-[1200px] w-full sm:px-0 px-4">
       {props.comments.map((comment) => (
         <CommentCard
           key={comment.name}

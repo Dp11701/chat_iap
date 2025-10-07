@@ -81,7 +81,7 @@ const AnimatedUseCaseGrid: React.FC<AnimatedUseCaseGridProps> = ({
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       {/* Hàng đầu - 5 cái */}
-      <div className="grid grid-cols-5 items-center justify-center xl:gap-10 sm:gap-6 gap-2 mx-20">
+      <div className="hidden sm:grid grid-cols-5 items-center justify-center xl:gap-10 sm:gap-6 gap-2 mx-20">
         {firstRow.map((useCase, index) => (
           <motion.div
             key={index}
@@ -111,7 +111,7 @@ const AnimatedUseCaseGrid: React.FC<AnimatedUseCaseGridProps> = ({
       </div>
 
       {/* Hàng sau - còn lại */}
-      <div className="grid grid-cols-6 items-center justify-center xl:gap-10 sm:gap-2 gap-1">
+      <div className="hidden sm:grid grid-cols-6 items-center justify-center xl:gap-10 sm:gap-2 gap-1">
         {secondRow.map((useCase, index) => {
           const actualIndex = index + 5; // Offset để match với visibleCards
           return (
@@ -130,6 +130,38 @@ const AnimatedUseCaseGrid: React.FC<AnimatedUseCaseGridProps> = ({
                 damping: 15,
                 mass: 0.8,
                 delay: actualIndex * 0.08,
+              }}
+            >
+              <UseCaseCard
+                title={useCase.title}
+                image={useCase.image}
+                isVisible={visibleCards.includes(actualIndex)}
+                isFlashing={flashingCard === actualIndex}
+              />
+            </motion.div>
+          );
+        })}
+      </div>
+
+      <div className="grid sm:hidden grid-cols-3 items-center justify-center xl:gap-10 sm:gap-2 gap-3">
+        {useCases.map((useCase, index) => {
+          const actualIndex = index + 5; // Offset để match với visibleCards
+          return (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30, scale: 0.8, rotateX: -15 }}
+              animate={{
+                opacity: visibleCards.includes(index) ? 1 : 0,
+                y: visibleCards.includes(index) ? 0 : 30,
+                scale: visibleCards.includes(index) ? 1 : 0.8,
+                rotateX: visibleCards.includes(index) ? 0 : -15,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+                mass: 0.8,
+                delay: index * 0.08,
               }}
             >
               <UseCaseCard

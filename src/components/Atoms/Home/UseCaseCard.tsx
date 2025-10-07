@@ -17,7 +17,7 @@ const UseCaseCard = (props: {
       }}
     >
       <motion.div
-        className="flex flex-row gap-2 items-center justify-center rounded-[16px] py-[12px] xl:px-[20px] sm:px-[12px] px-[8px]"
+        className="flex flex-row gap-2 items-center justify-center rounded-[16px] py-[12px] xl:px-[20px] sm:px-[12px] px-[4px]"
         animate={{
           background: props.isFlashing
             ? "linear-gradient(208.95deg, #15B475 -12.59%, rgba(42, 55, 58, 0.45) 93.51%)"
