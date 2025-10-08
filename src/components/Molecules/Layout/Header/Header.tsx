@@ -65,7 +65,7 @@ const Header = () => {
         <div className="flex flex-row items-center gap-4">
           <button
             onClick={toggleTheme}
-            className="sm:flex hidden items-center justify-center bg-[#FFFFFF1A] dark:bg-[#323232] px-[20px] py-[12px] rounded-[14px] gap-2 hover:bg-[#FFFFFF2A] dark:hover:bg-[#9E9E9E] transition-colors duration-200"
+            className="w-[110px] h-[52px] sm:flex hidden items-center justify-center bg-[#FFFFFF1A] dark:bg-[#323232] px-[20px] py-[12px] rounded-[14px] gap-2 hover:bg-[#FFFFFF2A] dark:hover:bg-[#9E9E9E] transition-colors duration-200"
           >
             <Image
               src={images.theme}
@@ -78,7 +78,7 @@ const Header = () => {
               {mode === "light" ? "Light" : "Dark"}
             </span>
           </button>{" "}
-          <button className="sm:flex hidden items-center justify-center bg-[#FFFFFF1A] dark:bg-[#323232] px-[20px] py-[12px] rounded-[14px] hover:bg-[#FFFFFF2A] dark:hover:bg-[#9E9E9E] transition-colors duration-200">
+          <button className="w-[110px] h-[52px] sm:flex hidden items-center justify-center bg-[#FFFFFF1A] dark:bg-[#323232] px-[20px] py-[12px] rounded-[14px] hover:bg-[#FFFFFF2A] dark:hover:bg-[#9E9E9E] transition-colors duration-200">
             <span className="font-[600] xl:text-[20px] text-[14px] leading-[20px] xl:leading-[32px] text-[#000000] dark:text-[#FFFFFF]">
               Log in
             </span>
