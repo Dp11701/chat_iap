@@ -61,10 +61,10 @@ const Compared = () => {
       <MainSection>
         <div className="flex flex-col items-center justify-center my-20 sm:mx-0 mx-2">
           <AllInOneButton title="Pricing & Plan" />
-          <span className="font-[600] text-[34px] leading-[54px] text-[#FFFFFF] mt-16">
+          <span className="font-[600] sm:text-[34px] sm:leading-[54px] text-[20px] leading-[32px] text-[#FFFFFF] sm:mt-16 mt-6">
             A plan for every need
           </span>
-          <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6">
+          <span className="font-[400] sm:text-[24px] sm:leading-[39px] text-[16px] leading-[24px] text-[#9E9E9F] mt-6 text-center sm:text-left">
             Choose from tailored packages that fits your goals and timeline.
           </span>
           <div className="flex sm:flex-row flex-col items-center gap-10 mt-10 bg-transparent sm:mx-0 mx-2">
