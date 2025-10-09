@@ -5,7 +5,7 @@ import "./SearchBar.css";
 export default function SearchBar() {
   const { images } = useThemeAssets();
   return (
-    <div className=" flex items-center h-[56px] sm:h-auto justify-center py-[12px] w-full xl:max-w-[1200px] sm:max-w-[766px] rounded-full bg-gradient-to-br from-[rgba(8,54,44,0.5)] to-[rgba(7,44,33,0.5)] border border-[#1a3732] overflow-hidden relative">
+    <div className=" flex items-center h-[56px] sm:h-auto justify-center py-[12px] w-full xl:max-w-[862px] sm:max-w-[766px] rounded-full bg-gradient-to-br from-[rgba(8,54,44,0.5)] to-[rgba(7,44,33,0.5)] border border-[#1a3732] overflow-hidden relative">
       <div className="dots_border"></div>
       {/* Input Field */}
       <div className="flex items-center flex-1 px-4 py-3 space-x-3">

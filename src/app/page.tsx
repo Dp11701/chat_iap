@@ -16,7 +16,7 @@ import FifthContent from "@/components/Organisms/BackGround/FifthContent";
 import CommentGrid from "@/components/Atoms/Home/CommentGrid";
 import { feedback } from "@/data/feedback";
 import SubSection from "@/components/Organisms/BackGround/SubSection";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Toast from "@/components/Atoms/Toast/Toast";
 
 export default function Home() {
@@ -55,14 +55,95 @@ export default function Home() {
     setToast((prev) => ({ ...prev, isVisible: false }));
   };
 
+  const TypewriterText = ({
+    phrases,
+    typingSpeed = 80,
+    deletingSpeed = 40,
+    pauseTime = 1200,
+    className,
+    caretClassName,
+  }: {
+    phrases: string[];
+    typingSpeed?: number;
+    deletingSpeed?: number;
+    pauseTime?: number;
+    className?: string;
+    caretClassName?: string;
+  }) => {
+    const [displayText, setDisplayText] = useState("");
+    const [phraseIndex, setPhraseIndex] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
+    const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+    useEffect(() => {
+      const current = phrases[phraseIndex % phrases.length];
+      const isComplete = !isDeleting && displayText === current;
+      const isGone = isDeleting && displayText === "";
+
+      let timeout = isDeleting ? deletingSpeed : typingSpeed;
+
+      if (isComplete) {
+        timeout = pauseTime;
+      }
+
+      timerRef.current = setTimeout(() => {
+        if (isComplete) {
+          setIsDeleting(true);
+          return;
+        }
+        if (isGone) {
+          setIsDeleting(false);
+          setPhraseIndex((idx) => (idx + 1) % phrases.length);
+          return;
+        }
+
+        const nextText = isDeleting
+          ? current.slice(0, displayText.length - 1)
+          : current.slice(0, displayText.length + 1);
+        setDisplayText(nextText);
+      }, timeout);
+
+      return () => {
+        if (timerRef.current) clearTimeout(timerRef.current);
+      };
+    }, [
+      displayText,
+      isDeleting,
+      phraseIndex,
+      phrases,
+      typingSpeed,
+      deletingSpeed,
+      pauseTime,
+    ]);
+
+    return (
+      <span
+        className={
+          className ??
+          "text-[24px] leading-[39px] xl:text-[60px] xl:leading-[96px] sm:text-[48px] sm:leading-[76px] font-[600] bg-gradient-to-r from-[#26B77D] to-[#00B0A7] bg-clip-text text-transparent mb-10"
+        }
+      >
+        {displayText}
+        <span
+          className={
+            caretClassName ?? "inline-block w-[2px] bg-white ml-1 animate-pulse"
+          }
+          style={{ height: "1em" }}
+        />
+      </span>
+    );
+  };
+
   return (
     <div className="h-full w-full h-min-screen">
       <MainSection>
-        <div className="flex flex-col items-center justify-center xl:h-[100vh] overflow-y-auto">
-          <span className="xl:text-[60px] xl:leading-[96px] sm:text-[48px] sm:leading-[76px] font-[600] text-[#FFFFFF] xl:mt-10 sm:mt-2 mt-2 text-[24px] leading-[39px]">
-            Elevate your Productivity with
-          </span>
-          <span className="text-[24px] leading-[39px] xl:text-[60px] xl:leading-[96px] sm:text-[48px] sm:leading-[76px] font-[600] bg-gradient-to-r from-[#26B77D] to-[#00B0A7] bg-clip-text text-transparent mb-10">
+        <div className="flex flex-col items-center justify-center xl:h-auto overflow-y-auto">
+          <TypewriterText
+            phrases={["Elevate your Productivity with"]}
+            className="xl:text-[60px] xl:leading-[96px] sm:text-[48px] sm:leading-[76px] font-[600] text-[#FFFFFF] xl:mt-5 sm:mt-2 mt-2 text-[24px] leading-[39px]"
+            caretClassName="inline-block w-[2px] bg-white ml-1 animate-pulse"
+          />
+          <span className="text-[24px] leading-[39px] xl:text-[64px] xl:leading-[96px] sm:text-[48px] sm:leading-[76px] font-[600] bg-gradient-to-r from-[#26B77D] to-[#00B0A7] bg-clip-text text-transparent mb-10">
             AI Chatbot
           </span>
           <SearchBar />
@@ -107,10 +188,10 @@ export default function Home() {
         </div>
       </SecondContent>
       <ThirdContent>
-        <div className="flex flex-col items-center justify-start ">
+        <div className="flex flex-col items-center justify-start xl:mt-20 mt-10">
           <AllInOneButton title="AI Tool Feature" />
           <span className="font-[600] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[#FFFFFF] mt-6">
-            Creative your world with AI tools
+            Creative Your World With AI Tools
           </span>
           <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6">
             What can Chat AI help you?
