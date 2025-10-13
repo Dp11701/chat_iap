@@ -242,7 +242,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-start mt-20">
           <AllInOneButton title="Usecases" />
           <span className="font-[600] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[#FFFFFF] mt-6">
-            AI Assistant - best friend with you everywhere -everytime
+            AI Assistant - Best Friend With You Everywhere - Everytime
           </span>
           <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6">
             Discover what our app can help with
@@ -271,7 +271,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-start mt-10">
           <AllInOneButton title="Testimonials" />
           <span className="font-[600] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[#FFFFFF] mt-10">
-            User feedback
+            User Feedback
           </span>
           <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6 flex flex-row items-center justify-center gap-2">
             4.9 <Image src={images.icStar} alt="star" width={24} height={24} />{" "}
@@ -289,7 +289,7 @@ export default function Home() {
           <div className="flex flex-row items-center justify-center w-[400px] p-6 bg-[#101613] rounded-[20px] mt-10">
             {" "}
             <span className="font-[600] xl:text-[20px] xl:leading-[32px] sm:text-[18px] sm:leading-[28px] text-[#FFFFFF] cursor-pointer">
-              View more review on
+              View More Review On
             </span>
           </div>
           <div className="flex sm:flex-row flex-col items-center justify-center my-10 gap-10">

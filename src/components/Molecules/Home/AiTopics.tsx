@@ -21,7 +21,7 @@ const AiTopics = () => {
         <span className="font-[600] xl:text-[28px] xl:leading-[45px] sm:text-[24px] sm:leading-[40px] text-[#FFFFFF]">
           AI Topics
         </span>
-        <span className="font-[400] xl:text-[20px] xl:leading-[32px] sm:text-[16px] sm:leading-[24px] text-[#E2E2E2]">
+        <span className="font-[400] xl:text-[20px] xl:leading-[32px] sm:text-[16px] sm:leading-[24px] text-[#E2E2E2] text-center sm:text-left">
           Chat AI can assist you in a variety of ways, including answering
           questions, providing recommendations, and helping you with
           problem-solving tasks.{" "}

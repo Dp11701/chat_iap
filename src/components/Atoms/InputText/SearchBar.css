@@ -95,7 +95,7 @@
   z-index: -10;
 }
 
-.button .dots_border::before {
+/* .button .dots_border::before {
   content: "";
   position: absolute;
   top: 30%;
@@ -110,13 +110,13 @@
 
   mask: linear-gradient(transparent 0%, white 120%);
   animation: rotate 2s linear infinite;
-}
+} */
 
-@keyframes rotate {
+/* @keyframes rotate {
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 .button .sparkle {
   position: relative;
