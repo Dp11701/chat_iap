@@ -42,21 +42,21 @@ const Header = () => {
         <div className="sm:flex flex-row items-center gap-4 hidden">
           <span
             onClick={() => router.push("/")}
-            className="font-[500] hover:text-[#E2E2E2] xl:text-[20px] xl:leading-[32px] text-[18px] leading-[28px] cursor-pointer transition-colors duration-200"
+            className="font-[600] hover:text-[#E2E2E2] xl:text-[20px] xl:leading-[32px] text-[18px] leading-[28px] cursor-pointer transition-colors duration-200"
             style={{ color: getNavColor("/") }}
           >
             Overview
           </span>
           <span
             onClick={() => router.push("/compared")}
-            className="font-[500] hover:text-[#E2E2E2] xl:text-[20px] xl:leading-[32px] text-[18px] leading-[28px] cursor-pointer transition-colors duration-200"
+            className="font-[600] hover:text-[#E2E2E2] xl:text-[20px] xl:leading-[32px] text-[18px] leading-[28px] cursor-pointer transition-colors duration-200"
             style={{ color: getNavColor("/compared") }}
           >
             Compared Plans
           </span>
           <span
             onClick={() => router.push("/faq")}
-            className="font-[500] hover:text-[#E2E2E2] xl:text-[20px] xl:leading-[32px] text-[18px] leading-[28px] cursor-pointer transition-colors duration-200"
+            className="font-[600] hover:text-[#E2E2E2] xl:text-[20px] xl:leading-[32px] text-[18px] leading-[28px] cursor-pointer transition-colors duration-200"
             style={{ color: getNavColor("/faq") }}
           >
             FAQ
