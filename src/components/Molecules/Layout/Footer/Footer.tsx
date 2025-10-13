@@ -32,7 +32,7 @@ const Footer = () => {
             }
             className="text-[18px] font-[500] leading-[28px] text-[#10A469] cursor-pointer"
           >
-            Terms of use
+            Terms of Use
           </span>
           <span
             onClick={() =>
@@ -43,7 +43,7 @@ const Footer = () => {
             }
             className="text-[18px] font-[500] leading-[28px] text-[#10A469] cursor-pointer"
           >
-            Privacy policy
+            Privacy Policy
           </span>
           <span
             onClick={() =>
@@ -90,7 +90,7 @@ const Footer = () => {
           }
           className="sm:text-[18px] text-[14px] font-[500] sm:leading-[28px] leading-[20px] text-[#10A469] cursor-pointer"
         >
-          Terms of use
+          Terms of Use
         </span>
         <span
           onClick={() =>
@@ -101,7 +101,7 @@ const Footer = () => {
           }
           className="sm:text-[18px] text-[14px] font-[500] sm:leading-[28px] leading-[20px] text-[#10A469] cursor-pointer"
         >
-          Privacy policy
+          Privacy Policy
         </span>
         <span
           onClick={() =>

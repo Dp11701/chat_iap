@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import FAQItem from "./FAQItem";
+import "./faq-list.css"; // 👈 Import custom CSS
 
 interface FAQData {
   id: string;
@@ -19,24 +20,16 @@ const FAQList: React.FC<FAQListProps> = ({ faqs, className = "" }) => {
   const toggleItem = (id: string) => {
     setOpenItems((prev) => {
       const newSet = new Set(prev);
-      if (newSet.has(id)) {
-        newSet.delete(id);
-      } else {
-        newSet.add(id);
-      }
+      if (newSet.has(id)) newSet.delete(id);
+      else newSet.add(id);
       return newSet;
     });
   };
 
   return (
     <div className={`w-full max-w-4xl mx-auto ${className}`}>
-      <div
-        className="relative bg-[#101613] rounded-[20px] overflow-hidden p-[2px]"
-        style={{
-          background: "linear-gradient(95.62deg, #26B77D 0%, #00B0A7 109.69%)",
-        }}
-      >
-        <div className="bg-[#101613] rounded-[18px] overflow-hidden">
+      <div className="faq-border-gradient rounded-[16px]">
+        <div className="bg-[#101613] rounded-[14px] overflow-hidden">
           {faqs.map((faq) => (
             <FAQItem
               key={faq.id}

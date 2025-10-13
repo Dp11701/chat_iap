@@ -1,0 +1,15 @@
+.faq-border-gradient {
+  position: relative;
+  padding: 2px; /* border thickness */
+  border-radius: 16px;
+  background: linear-gradient(
+    207.56deg,
+    #2bb4a5 -29.94%,
+    rgba(42, 55, 58, 0.15) 72.76%
+  );
+}
+
+.faq-border-gradient > div {
+  border-radius: 14px;
+  background: #101613;
+}

@@ -62,7 +62,7 @@ const Compared = () => {
         <div className="flex flex-col items-center justify-center my-20 sm:mx-0 mx-2">
           <AllInOneButton title="Pricing & Plan" />
           <span className="font-[600] sm:text-[34px] sm:leading-[54px] text-[20px] leading-[32px] text-[#FFFFFF] sm:mt-16 mt-6">
-            A plan for every need
+            A Plan For Every Need
           </span>
           <span className="font-[400] sm:text-[24px] sm:leading-[39px] text-[16px] leading-[24px] text-[#9E9E9F] mt-6 text-center sm:text-left">
             Choose from tailored packages that fits your goals and timeline.
@@ -109,7 +109,7 @@ const Compared = () => {
                 />
               </button>
               <span className="font-[600] text-[20px] leading-[32px] text-[#E2E2E2] mt-4">
-                Include feature
+                Include Feature
               </span>
               <div className="flex flex-col gap-4">
                 <Benefits title="Multi-language support" />
@@ -139,7 +139,7 @@ const Compared = () => {
                   </span>
                 </div>
                 <span className="font-[400] text-[18px] leading-[28px] text-[#9E9E9F] m">
-                  Our starer plan with 3 free chat messages
+                  Our starer plan with 3 free chat
                 </span>
                 <span className="font-[600] text-[45px] leading-[54px] text-[#E2E2E2]">
                   $39.99
@@ -149,7 +149,7 @@ const Compared = () => {
                 </button>
               </div>
               <span className="font-[600] text-[20px] leading-[32px] text-[#E2E2E2] mt-4 px-4">
-                Include feature
+                Include Feature
               </span>
               <div className="flex flex-col gap-4 px-4">
                 <Benefits title="Multi-language support" />
@@ -262,7 +262,7 @@ const Compared = () => {
           </div>
         </div>
       </FifthContent>
-      <div className="flex flex-col items-center justify-center w-full rounded-[60px] pb-20 bg-transparent">
+      <div className="flex flex-col items-center justify-center w-full rounded-[60px] pb-20 bg-transparent sm:mt-20 mt-10">
         <div className="xl:w-[1120px] lg:w-[766px] sm:w-[600px] w-[374px] rounded-[60px]">
           <SubSection>
             <div className="flex flex-col items-center justify-center sm:mt-20 mt-5">
