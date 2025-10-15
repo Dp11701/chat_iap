@@ -6,6 +6,7 @@ import AllInOneButton from "@/components/Atoms/Home/AllInOneButton";
 import MainSection from "@/components/Organisms/BackGround/MainSection";
 import { useThemeAssets } from "@/theme/useThemeAssets";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import SecondContent from "@/components/Organisms/BackGround/SecondContent";
 import ThirdContent from "@/components/Organisms/BackGround/ThirdContent";
 import ActionCard from "@/components/Atoms/Card/ActionCard";
@@ -197,44 +198,84 @@ export default function Home() {
             What can Chat AI help you?
           </span>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-10">
-            <ActionCard
-              title="AI Tool Feature"
-              image={images.card1}
-              active_image={images.card1_active}
-              description="What can Chat AI help you?"
-            />
-            <ActionCard
-              title="AI Tool Feature"
-              image={images.card2}
-              active_image={images.card2_active}
-              description="What can Chat AI help you?"
-            />
-            <ActionCard
-              title="AI Tool Feature"
-              image={images.card3}
-              active_image={images.card3_active}
-              description="What can Chat AI help you?"
-            />
-            <ActionCard
-              title="AI Tool Feature"
-              image={images.card4}
-              active_image={images.card4_active}
-              description="What can Chat AI help you?"
-            />
-
-            <ActionCard
-              title="AI Tool Feature"
-              image={images.card5}
-              active_image={images.card5_active}
-              description="What can Chat AI help you?"
-            />
-
-            <ActionCard
-              title="AI Tool Feature"
-              image={images.card6}
-              active_image={images.card6_active}
-              description="What can Chat AI help you?"
-            />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.4, delay: 0.0 }}
+            >
+              <ActionCard
+                title="AI Tool Feature"
+                image={images.card1}
+                active_image={images.card1_active}
+                description="What can Chat AI help you?"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+            >
+              <ActionCard
+                title="AI Tool Feature"
+                image={images.card2}
+                active_image={images.card2_active}
+                description="What can Chat AI help you?"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+            >
+              <ActionCard
+                title="AI Tool Feature"
+                image={images.card3}
+                active_image={images.card3_active}
+                description="What can Chat AI help you?"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.4, delay: 0.6 }}
+            >
+              <ActionCard
+                title="AI Tool Feature"
+                image={images.card4}
+                active_image={images.card4_active}
+                description="What can Chat AI help you?"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.4, delay: 0.7 }}
+            >
+              <ActionCard
+                title="AI Tool Feature"
+                image={images.card5}
+                active_image={images.card5_active}
+                description="What can Chat AI help you?"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.4, delay: 0.8 }}
+            >
+              <ActionCard
+                title="AI Tool Feature"
+                image={images.card6}
+                active_image={images.card6_active}
+                description="What can Chat AI help you?"
+              />
+            </motion.div>
           </div>
         </div>
       </ThirdContent>
