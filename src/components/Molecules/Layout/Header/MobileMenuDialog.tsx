@@ -59,7 +59,7 @@ export default function MobileMenuDialog({
       slotProps={{
         paper: {
           className:
-            "flex w-full !justify-center !rounded-[24px] !bg-[#0A0F0D] !m-[50px]",
+            "flex w-[350px] !justify-center !rounded-[24px] !bg-[#0A0F0D] !m-[20px] overflow-hidden",
         },
       }}
     >
