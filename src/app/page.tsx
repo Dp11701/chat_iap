@@ -176,7 +176,7 @@ export default function Home() {
           <div className="mt-10 flex flex-col items-center justify-center">
             <AllInOneButton title="All In One" />
             <span className="font-[600] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[#FFFFFF] mt-6">
-              Elevate your Productivity with Chat AI
+              Elevate Your Productivity With Chat AI
             </span>
             <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6">
               What can Chat AI help you?
