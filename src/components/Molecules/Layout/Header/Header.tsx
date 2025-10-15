@@ -83,8 +83,8 @@ const Header = () => {
               Log in
             </span>
           </button>{" "}
-          <div className="glow-container rounded-[14px]">
-            <button className="flex items-center justify-center bg-[linear-gradient(95.62deg,_#26B77D_0%,_#00B0A7_109.69%)] px-[20px] sm:py-[12px] py-[8px] rounded-[14px] hover:opacity-90 transition-opacity duration-200 cursor-pointer">
+          <div className="glow-container rounded-[14px] h-[52px]">
+            <button className="flex h-[52px] items-center justify-center bg-[linear-gradient(95.62deg,_#26B77D_0%,_#00B0A7_109.69%)] px-[20px] sm:py-[12px] py-[8px] rounded-[14px] hover:opacity-90 transition-opacity duration-200 cursor-pointer">
               <span className="font-[600] xl:text-[18px] text-[16px] leading-[20px] xl:leading-[28px] text-[#FFFFFF]">
                 Start for free
               </span>

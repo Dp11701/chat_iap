@@ -13,7 +13,24 @@ const MainSection = ({ children }: { children: React.ReactNode }) => {
         style={{
           background: "radial-gradient(circle, #00A375 -90%, transparent 70%)",
         }}
-      />
+      >
+        {/* Lưới mờ overlay */}
+        <div
+          className="absolute inset-0 opacity-25"
+          style={{
+            backgroundImage: `
+        linear-gradient(to right, rgba(255,255,255,0.25) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.25) 1px, transparent 1px)
+      `,
+            backgroundSize: "60px 60px", // 👈 tăng ô lưới
+            maskImage:
+              "radial-gradient(ellipse 70% 60% at 50% 50%, #000 60%, transparent 100%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 70% 60% at 50% 50%, #000 60%, transparent 100%)",
+            filter: "blur(1px)", // 👈 nhẹ hơn, bớt lem
+          }}
+        />
+      </div>
       <div
         className="
           pointer-events-none
