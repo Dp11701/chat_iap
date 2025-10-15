@@ -5,7 +5,17 @@ import "./SearchBar.css";
 export default function SearchBar() {
   const { images } = useThemeAssets();
   return (
-    <div className=" flex items-center h-[56px] sm:h-auto justify-center py-[12px] w-full xl:max-w-[862px] sm:max-w-[766px] rounded-full bg-gradient-to-br from-[rgba(8,54,44,0.5)] to-[rgba(7,44,33,0.5)] border border-[#1a3732] overflow-hidden relative">
+    <div
+      className="flex items-center h-[56px] sm:h-auto justify-center py-[12px] w-full xl:max-w-[862px] sm:max-w-[766px] rounded-full bg-gradient-to-br from-[rgba(8,54,44,0.5)] to-[rgba(7,44,33,0.5)] gradient-border"
+      // style={{
+      //   borderWidth: "2.88px",
+      //   borderStyle: "solid",
+      //   borderRadius: "90px",
+      //   borderImageSlice: 1,
+      //   borderImageSource:
+      //     "linear-gradient(207.56deg, #2BB4A5 -29.94%, rgba(42, 55, 58, 0.15) 72.76%)",
+      // }}
+    >
       <div className="dots_border"></div>
       {/* Input Field */}
       <div className="flex items-center flex-1 px-4 py-3 space-x-3">
@@ -16,11 +26,13 @@ export default function SearchBar() {
           height={46}
           className="w-[20px] h-[20px] sm:w-[46px] sm:h-[46px] "
         />
-        <input
-          type="text"
-          placeholder="Ask Anything"
-          className="flex-1 bg-transparent text-white/90 text-base placeholder-white/60 placeholder:font-normal sm:placeholder:text-[28px] sm:placeholder:leading-[45px] focus:outline-none py-2 font-[400] placeholder:text-[16px] placeholder:leading-[24px]"
-        />
+        <div className="flex items-center flex-1">
+          <input
+            type="text"
+            placeholder="Ask Anything"
+            className="flex-1 bg-transparent text-[#FFFFFF] font-[400] text-[28px] leading-[45px] placeholder:text-[#E2E2E2] placeholder:font-[400] placeholder:text-[28px] placeholder:leading-[45px] focus:outline-none"
+          />
+        </div>
       </div>
 
       {/* Suffix Button */}
