@@ -4,7 +4,7 @@ const FourthContent = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="relative w-full bg-transparent overflow-hidden">
       <div
-        className="
+        className=" hidden sm:block
           pointer-events-none
         absolute right-[-800px] bottom-[-800px] -translate-x-1/2 -translate-y-1/2
           w-[1000px] h-[1000px]

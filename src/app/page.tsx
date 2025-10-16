@@ -19,8 +19,6 @@ import { feedback } from "@/data/feedback";
 import SubSection from "@/components/Organisms/BackGround/SubSection";
 import { useEffect, useRef, useState } from "react";
 import Toast from "@/components/Atoms/Toast/Toast";
-import UseCaseCard from "@/components/Atoms/Home/UseCaseCard";
-import UseCaseCardStatic from "@/components/Atoms/Home/UseCaseCardStatic";
 
 export default function Home() {
   const { images } = useThemeAssets();

@@ -75,6 +75,7 @@ const AnimatedUseCaseGrid: React.FC<AnimatedUseCaseGridProps> = ({
 
   // Chia 2 hàng như trước
   const firstRow = useCases.slice(0, 5);
+  console.log(firstRow);
   const secondRow = useCases.slice(5);
 
   return (
