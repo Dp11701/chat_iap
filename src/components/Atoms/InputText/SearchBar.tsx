@@ -30,7 +30,7 @@ export default function SearchBar() {
           <input
             type="text"
             placeholder="Ask Anything"
-            className="flex-1 bg-transparent text-[#FFFFFF] font-[400] text-[28px] leading-[45px] placeholder:text-[#E2E2E2] placeholder:font-[400] placeholder:text-[28px] placeholder:leading-[45px] focus:outline-none"
+            className="flex-1 bg-transparent text-[#FFFFFF] font-[400] sm:text-[28px] text-[16px] sm:leading-[45px] leading-[24px] placeholder:text-[#E2E2E2] placeholder:opacity-100 placeholder:font-[400] sm:placeholder:text-[28px] placeholder:text-[16px] sm:placeholder:leading-[45px] placeholder:leading-[24px] focus:outline-none"
           />
         </div>
       </div>
