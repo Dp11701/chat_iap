@@ -2,7 +2,7 @@ import React from "react";
 
 const AiTopics = () => {
   return (
-    <div className="flex sm:flex-row flex-col items-center justify-center sm:mx-[10vw] mx-4 my-10 gap-20">
+    <div className="flex sm:flex-row flex-col items-center justify-center sm:mx-[10vw] mx-4 my-10 gap-10 sm:gap-20">
       <div className="flex sm:hidden flex-row rounded-[48px] w-full">
         <div className="col-span-1">
           <video
