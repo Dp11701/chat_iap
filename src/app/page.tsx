@@ -191,10 +191,10 @@ export default function Home() {
         <div className="flex flex-col items-center justify-start overflow-y-auto">
           <div className="mt-10 flex flex-col items-center justify-center">
             <AllInOneButton title="All In One" />
-            <span className="font-[600] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[#FFFFFF] mt-6">
+            <span className="font-[600] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[20px] leading-[32px] sm:text-left text-center text-[#FFFFFF] mt-6">
               Elevate Your Productivity With Chat AI
             </span>
-            <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6">
+            <span className="font-[400] sm:text-[24px] sm:leading-[39px] text-[16px] leading-[24px] text-[#9E9E9F] mt-6">
               What can Chat AI help you?
             </span>
           </div>
