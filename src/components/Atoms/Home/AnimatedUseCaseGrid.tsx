@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import UseCaseCard from "./UseCaseCard";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
@@ -13,11 +14,8 @@ interface AnimatedUseCaseGridProps {
 const AnimatedUseCaseGrid: React.FC<AnimatedUseCaseGridProps> = ({
   useCases,
 }) => {
-  const [visibleCards, setVisibleCards] = useState<number[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [isInView, setIsInView] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
-  const [flashingCard, setFlashingCard] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Embla carousel setup with autoplay
@@ -57,26 +55,45 @@ const AnimatedUseCaseGrid: React.FC<AnimatedUseCaseGridProps> = ({
     };
   }, [hasAnimated]);
 
-  // Animation logic khi component trong view
-  useEffect(() => {
-    if (!isInView) return;
+  // No per-item timers; we use Framer Motion variants for smooth stagger without extra renders
 
-    let i = 0;
-    const timer = setInterval(() => {
-      setVisibleCards((prev) => [...prev, i]);
-      setFlashingCard(i);
-      setTimeout(() => setFlashingCard(null), 1000);
-      i++;
-      if (i >= useCases.length) clearInterval(timer);
-    }, 400);
+  // Chia 2 hàng như trước (memoized)
+  const { firstRow, secondRow } = useMemo(() => {
+    const firstRowCount = Math.min(5, useCases.length);
+    return {
+      firstRow: useCases.slice(0, firstRowCount),
+      secondRow: useCases.slice(firstRowCount),
+    };
+  }, [useCases]);
 
-    return () => clearInterval(timer);
-  }, [isInView, useCases.length]);
-
-  // Chia 2 hàng như trước
-  const firstRow = useCases.slice(0, 5);
-  console.log(firstRow);
-  const secondRow = useCases.slice(5);
+  // Framer Motion variants
+  const containerRow1Variants: Variants = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: 0, when: "beforeChildren" },
+    },
+  };
+  const containerRow2Variants: Variants = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: 0, delayChildren: 0 },
+    },
+  };
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30, scale: 0.95, rotateX: -15 },
+    show: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      rotateX: 0,
+      transition: {
+        type: "spring" as const,
+        stiffness: 100,
+        damping: 15,
+        mass: 0.8,
+      },
+    },
+  };
 
   return (
     <motion.div
@@ -87,67 +104,40 @@ const AnimatedUseCaseGrid: React.FC<AnimatedUseCaseGridProps> = ({
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       {/* Hàng đầu */}
-      <div className="hidden sm:grid grid-cols-5 items-center justify-center xl:gap-4 sm:gap-3 gap-2 mx-20">
+      <motion.div
+        className="hidden sm:grid grid-cols-5 items-center justify-center xl:gap-4 sm:gap-3 gap-2 mx-20"
+        variants={containerRow1Variants}
+        initial="hidden"
+        animate={isInView ? "show" : "hidden"}
+      >
         {firstRow.map((useCase, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30, scale: 0.8, rotateX: -15 }}
-            animate={{
-              opacity: visibleCards.includes(index) ? 1 : 0,
-              y: visibleCards.includes(index) ? 0 : 30,
-              scale: visibleCards.includes(index) ? 1 : 0.8,
-              rotateX: visibleCards.includes(index) ? 0 : -15,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              damping: 15,
-              mass: 0.8,
-              delay: index * 0.08,
-            }}
-          >
+          <motion.div key={index} variants={itemVariants}>
             <UseCaseCard
               title={useCase.title}
               image={useCase.image}
-              isVisible={visibleCards.includes(index)}
-              isFlashing={flashingCard === index}
+              flashDelayMs={index * 1000}
             />
           </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {/* Hàng sau */}
-      <div className="hidden sm:grid grid-cols-6 items-center justify-center xl:gap-4 sm:gap-3 gap-1">
-        {secondRow.map((useCase, index) => {
-          const actualIndex = index + 5;
-          return (
-            <motion.div
-              key={actualIndex}
-              initial={{ opacity: 0, y: 30, scale: 0.8, rotateX: -15 }}
-              animate={{
-                opacity: visibleCards.includes(actualIndex) ? 1 : 0,
-                y: visibleCards.includes(actualIndex) ? 0 : 30,
-                scale: visibleCards.includes(actualIndex) ? 1 : 0.8,
-                rotateX: visibleCards.includes(actualIndex) ? 0 : -15,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 15,
-                mass: 0.8,
-                delay: actualIndex * 0.08,
-              }}
-            >
-              <UseCaseCard
-                title={useCase.title}
-                image={useCase.image}
-                isVisible={visibleCards.includes(actualIndex)}
-                isFlashing={flashingCard === actualIndex}
-              />
-            </motion.div>
-          );
-        })}
-      </div>
+      <motion.div
+        className="hidden sm:grid grid-cols-6 items-center justify-center xl:gap-4 sm:gap-3 gap-1"
+        variants={containerRow2Variants}
+        initial="hidden"
+        animate={isInView ? "show" : "hidden"}
+      >
+        {secondRow.map((useCase, index) => (
+          <motion.div key={index} variants={itemVariants}>
+            <UseCaseCard
+              title={useCase.title}
+              image={useCase.image}
+              flashDelayMs={firstRow.length * 1000 + 200 + index * 1000}
+            />
+          </motion.div>
+        ))}
+      </motion.div>
 
       {/* CSS Animation Carousel - 2 rows */}
       <div className="sm:hidden flex flex-col gap-0">

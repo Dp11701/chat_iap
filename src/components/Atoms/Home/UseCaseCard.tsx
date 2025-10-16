@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 const UseCaseCard = (props: {
   title: string;
   image: string;
-  isVisible?: boolean;
-  isFlashing?: boolean;
+  flashDelayMs?: number;
 }) => {
+  const [isFlashing, setIsFlashing] = useState(false);
+
+  useEffect(() => {
+    const delay = props.flashDelayMs ?? 0;
+    const start = setTimeout(() => {
+      setIsFlashing(true);
+      const stop = setTimeout(() => setIsFlashing(false), 1000);
+      return () => clearTimeout(stop);
+    }, delay);
+    return () => clearTimeout(start);
+  }, [props.flashDelayMs]);
   return (
     <div
       className="p-[1px] rounded-[16px]"
@@ -19,11 +29,11 @@ const UseCaseCard = (props: {
       <motion.div
         className="flex flex-row  gap-2 items-center justify-center rounded-[16px] py-[12px] xl:px-[20px] sm:px-[12px] px-[4px]"
         animate={{
-          background: props.isFlashing
+          background: isFlashing
             ? "linear-gradient(208.95deg, #15B475 -12.59%, rgba(42, 55, 58, 0.45) 93.51%)"
             : "#1F2121",
-          scale: props.isFlashing ? 1.02 : 1,
-          boxShadow: props.isFlashing
+          scale: isFlashing ? 1.02 : 1,
+          boxShadow: isFlashing
             ? "0 8px 32px rgba(21, 180, 117, 0.3)"
             : "0 4px 16px rgba(0, 0, 0, 0.2)",
         }}
