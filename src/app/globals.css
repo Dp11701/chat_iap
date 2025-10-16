@@ -1,5 +1,7 @@
 @import url("https://fonts.cdnfonts.com/css/sf-pro-display");
 @import "tailwindcss";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 /* Import SF Pro Display from CDN */
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -98,6 +100,25 @@ body {
   );
   mask-repeat: no-repeat;
   mask-size: cover;
+}
+
+/* CSS Animation for carousel */
+@keyframes autoRun {
+  from {
+    left: 100%;
+  }
+  to {
+    left: calc(200px * -1);
+  }
+}
+
+@keyframes autoRunReverse {
+  from {
+    left: -200px;
+  }
+  to {
+    left: 100%;
+  }
 }
 
 /* Gradient glow wrapper for CTA button */

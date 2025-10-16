@@ -19,6 +19,8 @@ import { feedback } from "@/data/feedback";
 import SubSection from "@/components/Organisms/BackGround/SubSection";
 import { useEffect, useRef, useState } from "react";
 import Toast from "@/components/Atoms/Toast/Toast";
+import UseCaseCard from "@/components/Atoms/Home/UseCaseCard";
+import UseCaseCardStatic from "@/components/Atoms/Home/UseCaseCardStatic";
 
 export default function Home() {
   const { images } = useThemeAssets();
@@ -28,6 +30,19 @@ export default function Home() {
     message: "",
     type: "success" as "success" | "error" | "info",
   });
+  const useCases = [
+    { title: "Travel", image: images.icTravel },
+    { title: "Education", image: images.icEducation },
+    { title: "Writer", image: images.icWriter },
+    { title: "Math", image: images.icMath },
+    { title: "Language", image: images.icLanguage },
+    { title: "Social Media", image: images.icSocialMedia },
+    { title: "Design", image: images.icDesign },
+    { title: "Voice", image: images.icVoice },
+    { title: "Game", image: images.icGame },
+    { title: "Essays", image: images.icEssays },
+    { title: "Email", image: images.icEmail },
+  ];
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -289,21 +304,7 @@ export default function Home() {
             Discover what our app can help with
           </span>
           <div className="mt-20 mb-10">
-            <AnimatedUseCaseGrid
-              useCases={[
-                { title: "Travel", image: images.icTravel },
-                { title: "Education", image: images.icEducation },
-                { title: "Writer", image: images.icWriter },
-                { title: "Math", image: images.icMath },
-                { title: "Language", image: images.icLanguage },
-                { title: "Social Media", image: images.icSocialMedia },
-                { title: "Design", image: images.icDesign },
-                { title: "Voice", image: images.icVoice },
-                { title: "Game", image: images.icGame },
-                { title: "Essays", image: images.icEssays },
-                { title: "Email", image: images.icEmail },
-              ]}
-            />
+            <AnimatedUseCaseGrid useCases={useCases} />
           </div>
           <AiTopics />
         </div>
