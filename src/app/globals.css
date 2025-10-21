@@ -121,6 +121,51 @@ body {
   }
 }
 
+/* Tablet-only marquee for comments */
+.tablet-marquee {
+  display: none !important;
+}
+
+.tablet-hide {
+  display: block;
+}
+
+@media (min-width: 640px) and (max-width: 1279.9px) {
+  .tablet-marquee {
+    display: block !important;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tablet-hide {
+    display: none !important;
+  }
+
+  .tablet-marquee-track {
+    position: relative;
+    display: flex;
+    gap: 24px;
+    width: max-content;
+    animation: tabletMarquee 24s linear infinite;
+  }
+
+  @keyframes tabletMarquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/* Ensure mobile grid hides on desktop too */
+@media (min-width: 1280px) {
+  .tablet-hide {
+    display: none !important;
+  }
+}
+
 /* Gradient glow wrapper for CTA button */
 .glow-container {
   position: relative;

@@ -11,7 +11,7 @@ export type User = {
 const CommentCard = (props: { comment: string; name: string; user: User }) => {
   const { images } = useThemeAssets();
   return (
-    <div className="flex flex-col gap-2 bg-[#101613] rounded-[20px] p-[24px]  justify-between transition-transform duration-200 ease-out hover:scale-105">
+    <div className="flex flex-col sm:w-[357px] gap-2 bg-[#101613] rounded-[20px] p-[24px]  justify-between transition-transform duration-200 ease-out hover:scale-105">
       <span className="font-[600] xl:text-[20px] xl:leading-[32px] sm:text-[18px] sm:leading-[28px] text-[#FFFFFF]">
         {props.name}
       </span>
