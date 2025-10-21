@@ -400,7 +400,7 @@ export default function Home() {
         <div className="xl:w-[1120px] lg:w-[766px] sm:w-[600px] w-[374px] rounded-[60px]">
           <SubSection>
             <div className="flex flex-col items-center justify-center sm:mt-20 mt-5">
-              <AllInOneButton title="Start your journey" />
+              <AllInOneButton title="Start Your Journey" />
               <span className="font-[600] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[20px] leading-[32px] text-[#FFFFFF] mt-6">
                 Unlock Your AI Power, Save More!
               </span>
