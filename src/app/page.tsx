@@ -154,7 +154,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center xl:h-auto overflow-y-auto">
           <TypewriterText
             phrases={["Elevate your Productivity with"]}
-            className="xl:text-[60px] xl:leading-[96px] sm:text-[48px] sm:leading-[76px] font-[600] text-[#FFFFFF] xl:mt-5 sm:mt-2 mt-2 text-[24px] leading-[39px]"
+            className="xl:text-[60px] xl:leading-[96px] sm:text-[48px] sm:leading-[76px] font-[600] text-[#FFFFFF] xl:mt-10 sm:mt-3 mt-2 text-[24px] leading-[39px]"
             caretClassName="inline-block w-[2px] bg-white ml-1 animate-pulse"
           />
           <span className="text-[24px] leading-[39px] xl:text-[64px] xl:leading-[96px] sm:text-[48px] sm:leading-[76px] font-[600] bg-gradient-to-r from-[#26B77D] to-[#00B0A7] bg-clip-text text-transparent mb-10">

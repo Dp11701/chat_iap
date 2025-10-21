@@ -32,7 +32,7 @@ const Footer = () => {
             }
             className="text-[18px] font-[500] leading-[28px] text-[#10A469] cursor-pointer"
           >
-            Terms of Use
+            Terms Of Use
           </span>
           <span
             onClick={() =>
