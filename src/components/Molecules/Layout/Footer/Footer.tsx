@@ -90,7 +90,7 @@ const Footer = () => {
           }
           className="sm:text-[18px] text-[14px] font-[500] sm:leading-[28px] leading-[20px] text-[#10A469] cursor-pointer"
         >
-          Terms of Use
+          Terms Of Use
         </span>
         <span
           onClick={() =>
