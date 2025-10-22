@@ -204,10 +204,10 @@ export default function Home() {
       <ThirdContent>
         <div className="flex flex-col items-center justify-start xl:mt-20 mt-10">
           <AllInOneButton title="AI Tool Feature" />
-          <span className="font-[600] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[#FFFFFF] mt-6">
+          <span className="font-[600] text-[20px] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[#FFFFFF] mt-6">
             Creative Your World With AI Tools
           </span>
-          <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6">
+          <span className="font-[400] sm:text-[24px] sm:leading-[39px] text-[16px] leading-[24px] text-[#9E9E9F] mt-6">
             What can Chat AI help you?
           </span>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 items-center justify-center gap-10">
@@ -298,7 +298,7 @@ export default function Home() {
           <span className="font-[600] text-[20px] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[#FFFFFF] mt-6 mx-10 text-center">
             AI Assistant - Best Friend With You Everywhere - Everytime
           </span>
-          <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6">
+          <span className="font-[400] sm:text-[24px] sm:leading-[39px] text-[16px] leading-[24px] text-[#9E9E9F] mt-6">
             Discover what our app can help with
           </span>
           <div className="mt-20 mb-10">
@@ -310,7 +310,7 @@ export default function Home() {
       <FifthContent>
         <div className="flex flex-col items-center justify-start mt-10">
           <AllInOneButton title="Testimonials" />
-          <span className="font-[600] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[#FFFFFF] mt-10">
+          <span className="font-[600] text-[20px] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[#FFFFFF] mt-10">
             User Feedback
           </span>
           <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6 flex flex-row items-center justify-center gap-2">
@@ -328,7 +328,7 @@ export default function Home() {
           <CommentGrid comments={feedback} />
           <div className="flex flex-row items-center justify-center w-[400px] p-6 bg-[#101613] rounded-[20px] mt-10">
             {" "}
-            <span className="font-[600] xl:text-[20px] xl:leading-[32px] sm:text-[18px] sm:leading-[28px] text-[#FFFFFF] cursor-pointer">
+            <span className="font-[600]  xl:text-[20px] xl:leading-[32px] sm:text-[18px] sm:leading-[28px] text-[#FFFFFF] cursor-pointer">
               View More Review On
             </span>
           </div>
@@ -401,7 +401,7 @@ export default function Home() {
           <SubSection>
             <div className="flex flex-col items-center justify-center sm:mt-20 mt-5">
               <AllInOneButton title="Start Your Journey" />
-              <span className="font-[600] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[20px] leading-[32px] text-[#FFFFFF] mt-6">
+              <span className="font-[600]  xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[20px] leading-[32px] text-[#FFFFFF] mt-6">
                 Unlock Your AI Power, Save More!
               </span>
               <span className="font-[400] sm:text-[24px] sm:leading-[39px] text-[16px] leading-[24px] text-[#9E9E9F] mt-6 mb-10">

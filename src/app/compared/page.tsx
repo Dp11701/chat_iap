@@ -176,7 +176,7 @@ const Compared = () => {
       <FifthContent>
         <div className="flex flex-col items-center justify-start mt-10">
           <AllInOneButton title="Testimonials" />
-          <span className="font-[600] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[#FFFFFF] mt-10">
+          <span className="font-[600] text-[20px] xl:text-[34px] xl:leading-[54px] sm:text-[28px] sm:leading-[45px] text-[#FFFFFF] mt-10">
             User Feedback
           </span>
           <span className="font-[400] text-[24px] leading-[39px] text-[#9E9E9F] mt-6 flex flex-row items-center justify-center gap-2">
