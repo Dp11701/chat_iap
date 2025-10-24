@@ -66,17 +66,23 @@ const AnimatedUseCaseGrid: React.FC<AnimatedUseCaseGridProps> = ({
     };
   }, [useCases]);
 
-  // Framer Motion variants
+  // Framer Motion variants với hiệu ứng hiển thị từng thẻ một
   const containerRow1Variants: Variants = {
     hidden: {},
     show: {
-      transition: { staggerChildren: 0, when: "beforeChildren" },
+      transition: {
+        staggerChildren: 0.2, // Hiển thị từng thẻ cách nhau 0.2s
+        when: "beforeChildren",
+      },
     },
   };
   const containerRow2Variants: Variants = {
     hidden: {},
     show: {
-      transition: { staggerChildren: 0, delayChildren: 0 },
+      transition: {
+        staggerChildren: 0.15, // Hiển thị từng thẻ cách nhau 0.15s
+        delayChildren: 0.5, // Delay 0.5s sau khi hàng đầu hoàn thành
+      },
     },
   };
   const itemVariants: Variants = {
