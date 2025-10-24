@@ -8,7 +8,7 @@ const Footer = () => {
   const { images } = useThemeAssets();
   const { mode, toggleTheme } = useTheme();
   return (
-    <div className="bg-[#101613] pt-[32px] sm:pb-20 pb-10 sm:px-[160px] px-[12px] m-0 flex flex-col w-full items-center justify-center">
+    <div className="bg-[#101613] pt-[32px] sm:pb-20 pb-10 sm:px-10 xl:px-[160px] px-[12px] m-0 flex flex-col w-full items-center justify-center">
       <div className="flex flex-row justify-between items-centers w-full">
         <div className="flex flex-row gap-2 items-center">
           <Image

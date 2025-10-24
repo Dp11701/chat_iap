@@ -21,7 +21,7 @@ const CommentGrid = (props: {
         ))}
       </div> */}
 
-      {/* Tablet: marquee (375 <= width < 1280) */}
+      {/* Tablet: marquee (375 <= width < 1280)
       <div className="tablet-marquee w-full px-4">
         <div className="tablet-marquee-track">
           {duplicated.map((comment, idx) => (
@@ -34,10 +34,10 @@ const CommentGrid = (props: {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Desktop: 3 column grid (>= 1280) */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-[24px] sm:w-[1200px] w-full sm:px-0 px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-[24px] sm:w-full xl:w-[1200px] w-full sm:px-0 px-4 justify-items-center">
         {props.comments.map((comment) => (
           <CommentCard
             key={comment.name}

@@ -397,7 +397,7 @@ export default function Home() {
         </div>
       </FifthContent>
       <div className="flex flex-col items-center justify-center w-full rounded-[60px] pb-20 bg-transparent sm:mt-20 mt-10">
-        <div className="xl:w-[1120px] lg:w-[766px] sm:w-[600px] w-[374px] rounded-[60px]">
+        <div className="xl:w-[1120px] lg:w-[766px] sm:w-[740px] w-[374px] rounded-[60px]">
           <SubSection>
             <div className="flex flex-col items-center justify-center sm:mt-20 mt-5">
               <AllInOneButton title="Start Your Journey" />
